@@ -4,4 +4,14 @@
 
 body{
     font-family: $stack-poppins;
+    color: $colour-text;
+    letter-spacing: .4px;
+}
+
+a{
+    text-decoration: none;
+}
+
+hr{
+    background-color: $colour-text;
 }

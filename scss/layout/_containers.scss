@@ -1,0 +1,17 @@
+.container{
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.article-content{
+    padding: 30px;
+}
+
+.branding{
+    background-color: $colour-primary;
+    color: $white;
+}
+
+.branding strong{
+    font-weight: $font-weight-bold;
+}

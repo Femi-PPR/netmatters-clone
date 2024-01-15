@@ -1,0 +1,10 @@
+@mixin circle-icon($size, $bg){
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    background: $bg;
+}
+
+@mixin button-styles($px, $py, $colour, $br, $border, $font-size){
+
+}

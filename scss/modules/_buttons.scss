@@ -1,0 +1,32 @@
+.btn{
+    text-transform: uppercase;
+    display: inline-block;
+    color: $white;
+    height: auto;
+    line-height: 35px;
+    padding: 5px 15px;
+    background-color: $colour-dark-btn;
+    font-size: 1.063rem;
+    font-weight: $font-weight-normal;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: middle;
+
+    &-prim{
+        padding: 10px 30px;
+        border-radius: 6px;
+        font-size: 20px;
+    }
+
+    &-google{
+        background-color: ;
+    }
+}
+
+.branding__buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 17px;
+}

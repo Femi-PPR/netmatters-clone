@@ -5,6 +5,6 @@
     background: $bg;
 }
 
-@mixin button-styles($px, $py, $colour, $br, $border, $font-size){
-
+@mixin hidden{
+    display: none;
 }

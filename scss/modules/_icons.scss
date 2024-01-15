@@ -1,7 +1,6 @@
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family:  $font-iconmoon;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -19,6 +18,15 @@
 
     &::before{
         content: "\ea3c";
+    }
+}
+
+.icon-star{
+    margin-bottom: 25px;
+    &::before{
+        content: "\e9d9";
+        color: $colour-star;
+        font-size: 51px;
     }
 }
 

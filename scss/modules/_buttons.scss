@@ -5,7 +5,7 @@
     height: auto;
     line-height: 35px;
     padding: 5px 15px;
-    background-color: $colour-dark-btn;
+    background-color: $colour-btn-dark;
     font-size: 1.063rem;
     font-weight: $font-weight-normal;
     border: 1px solid transparent;
@@ -20,7 +20,10 @@
     }
 
     &-google{
-        background-color: ;
+        background-color: $colour-btn-google;
+    }
+    &-trustpilot{
+        background-color: $colour-btn-trustpilot;
     }
 }
 

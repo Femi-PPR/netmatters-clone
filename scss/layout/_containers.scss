@@ -1,5 +1,5 @@
 .container{
-    padding: 0 15px;
+    padding: 50px 15px;
     margin: 0 auto;
 }
 
@@ -10,8 +10,28 @@
 .branding{
     background-color: $colour-primary;
     color: $white;
+
+    a{
+        color: $white;
+    }
+
+    strong{
+        font-weight: $font-weight-bold;
+    }
+
+    
+} 
+
+.container-branding{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-.branding strong{
-    font-weight: $font-weight-bold;
+.client-quote{
+    margin: 0px;
+}
+
+.star-rating{
+    margin-bottom: 25px;
 }

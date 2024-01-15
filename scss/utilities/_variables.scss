@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+@font-face {
+    font-family: 'icomoon';
+    src:  url('/fonts/icomoon.eot?x7c0h8');
+    src:  url('/fonts/icomoon.eot?x7c0h8#iefix') format('embedded-opentype'),
+      url('/fonts/icomoon.ttf?x7c0h8') format('truetype'),
+      url('/fonts/icomoon.woff?x7c0h8') format('woff'),
+      url('/fonts/icomoon.svg?x7c0h8#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 $stack-poppins: 'Poppins', sans-serif;
+$font-iconmoon: 'icomoon' !important;
+
+$font-weight-normal: 400;
+$font-weight-bold: 600;
 
 
 $tuna-1: #323544;
@@ -11,6 +27,11 @@ $radical-red: #f62459;
 $ebony-clay: #212330;
 $tundora: #444;
 $alto: #ddd;
+$white: #fff;
+
+$dodger-blue: #4387f6;
+$dodger-blue-darker: darken($dodger-blue, 15%);
+
 
 $colour-footer-bg       : $tuna-1;
 $colour-primary         : $tuna-2;

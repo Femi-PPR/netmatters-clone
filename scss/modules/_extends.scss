@@ -5,3 +5,11 @@
 %mb-25{
     margin-bottom: 25px;
 }
+
+%icon-rarrow{
+    @include icon("\ea3c");
+}
+
+%no-border{
+    border: none;
+}

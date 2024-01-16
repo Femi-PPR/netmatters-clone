@@ -8,3 +8,15 @@
 @mixin hidden{
     display: none;
 }
+
+@mixin icon($icon, $colour: null, $fsize: null){
+    &::before{
+        content: $icon;
+        color: $colour;
+        font-size: $fsize;
+    }
+}
+
+@mixin no-border{
+    border: none;
+}

@@ -4,14 +4,14 @@ a:hover{
 
 .btn{
     &-prim:hover{
-        background-color: darken($colour-btn-dark, 15%);
+        background-color: darken($colour-btn-dark, 5%);
         text-decoration: none;
     }
     &-google:hover{
-        background-color: darken($colour-btn-google, 15%);
+        background-color: darken($colour-btn-google, 5%);
     }
     &-trustpilot:hover{
-        background-color: darken($colour-btn-trustpilot, 15%);
+        background-color: darken($colour-btn-trustpilot, 5%);
     }
     
 }

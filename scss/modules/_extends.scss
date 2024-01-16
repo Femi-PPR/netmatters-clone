@@ -7,7 +7,7 @@
 }
 
 %icon-rarrow{
-    @include icon("\ea3c");
+    @include icon($icon-rarrow);
 }
 
 %no-border{

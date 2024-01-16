@@ -2,27 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?x7c0h8");
-  src: url("/fonts/icomoon.eot?x7c0h8#iefix") format("embedded-opentype"), url("/fonts/icomoon.ttf?x7c0h8") format("truetype"), url("/fonts/icomoon.woff?x7c0h8") format("woff"), url("/fonts/icomoon.svg?x7c0h8#icomoon") format("svg");
+  src: url("/fonts/icomoon.ttf?x7c0h8");
   font-weight: normal;
   font-style: normal;
   font-display: block; }
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/fonts/fontawesome-webfont.woff?v=4.0.3");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Material-Design-Icons';
+  src: url("/fonts/Material-Design-Icons.woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
 *, ::after, ::before {
   box-sizing: border-box; }
 
 body {
   font-family: "Poppins", sans-serif;
-  color: #666;
+  color: #333645;
   letter-spacing: .4px;
   margin: 0px; }
 
 a {
   text-decoration: none;
-  color: #666; }
+  color: #333645; }
 
 h2 {
   line-height: 1.1;
-  font-size: 2.25rem; }
+  font-size: 2.25rem;
+  font-weight: 600; }
 
 h3 {
   font-size: 1.625rem;
@@ -32,9 +44,22 @@ p {
   line-height: 1.875rem;
   margin: 0 0 25px; }
 
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .heading h2 {
+    margin-right: auto; }
+
 .container {
   padding: 50px 15px;
   margin: 0 auto; }
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media screen and (min-width: 992px) {
+    .container {
+      width: 970px; } }
 
 .article-content {
   padding: 30px; }
@@ -61,12 +86,169 @@ p {
 .client {
   margin-bottom: 45px; }
 
+.link-services-top {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .link-services-top {
+      display: block; } }
+.link-services-btm {
+  margin: 0 auto;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .link-services-btm {
+      display: none; } }
+
+.card {
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 15px;
+  transition: .5s ease; }
+  .card a {
+    display: block;
+    padding: 30px; }
+
+.cards-services {
+  display: grid;
+  gap: 30px; }
+  @media screen and (min-width: 992px) {
+    .cards-services {
+      grid-template-areas: "bespoke-software bespoke-software it-support it-support digital-marketing digital-marketing" "telecoms-services telecoms-services telecoms-services web-design web-design web-design" "cyber-security cyber-security cyber-security developer-training developer-training developer-training"; } }
+  @media screen and (min-width: 1260px) {
+    .cards-services {
+      grid-template-areas: "bespoke-software bespoke-software bespoke-software bespoke-software it-support it-support it-support it-support digital-marketing digital-marketing digital-marketing digital-marketing" "telecoms-services telecoms-services telecoms-services web-design web-design web-design cyber-security cyber-security cyber-security developer-training developer-training developer-training"; } }
+
+@media screen and (min-width: 992px) {
+  .card-bespoke-software {
+    grid-area: bespoke-software; } }
+
+.wrapper-bespoke-software {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #67809f;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-it-support {
+    grid-area: it-support; } }
+
+.wrapper-it-support {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #4183d7;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-digital-marketing {
+    grid-area: digital-marketing; } }
+
+.wrapper-digital-marketing {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #2ecc71;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-telecoms-services {
+    grid-area: telecoms-services; } }
+
+.wrapper-telecoms-services {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #d64541;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-web-design {
+    grid-area: web-design; } }
+
+.wrapper-web-design {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #926fb1;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-cyber-security {
+    grid-area: cyber-security; } }
+
+.wrapper-cyber-security {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #f62459;
+  margin-bottom: 17px; }
+
+@media screen and (min-width: 992px) {
+  .card-developer-training {
+    grid-area: developer-training; } }
+
+.wrapper-developer-training {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background: #ce4125;
+  margin-bottom: 17px; }
+
 .content__footer {
   background-color: #323544;
   color: #fff; }
 
+.branding-title {
+  margin: -6px 0 40px; }
+
+.quote strong {
+  font-style: italic;
+  font-size: 1.3rem; }
+
+.client {
+  font-weight: 600; }
+  .client cite {
+    color: #a3a8ac;
+    font-style: normal;
+    font-size: 1.1rem; }
+
+.heading h2 {
+  font-size: 2.7rem; }
+
+.card h2 {
+  font-size: 1.3rem;
+  padding-bottom: 10px;
+  margin: 0 0 11px;
+  font-weight: 400; }
+.card p {
+  font-size: .8125rem;
+  line-height: 1.375rem;
+  margin-bottom: 13px; }
+
 .icon-rarrow-link::before, .icon-rarrow-btn::before {
-  content: ""; }
+  content: ""; }
 
 .btn {
   text-transform: uppercase;
@@ -102,6 +284,27 @@ p {
   .btns-quote {
     gap: 20px 8px; }
 
+.btn-bespoke-software {
+  background-color: #67809f; }
+
+.btn-it-support {
+  background-color: #4183d7; }
+
+.btn-digital-marketing {
+  background-color: #2ecc71; }
+
+.btn-telecoms-services {
+  background-color: #d64541; }
+
+.btn-web-design {
+  background-color: #926fb1; }
+
+.btn-cyber-security {
+  background-color: #f62459; }
+
+.btn-developer-training {
+  background-color: #ce4125; }
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
@@ -113,6 +316,27 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+[class^="fa-"], [class*=" fa-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "FontAwesome" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+[class*=" mdi-"], [class^=mdi-] {
+  font-family: Material-Design-Icons;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .icon-rarrow-btn {
   font-size: 20px;
   margin-right: -4px;
@@ -120,32 +344,56 @@ p {
   display: inline-block;
   line-height: 35px; }
 
-.icon-star {
+.fa-star {
   margin-bottom: 25px; }
-  .icon-star::before {
-    content: "";
+  .fa-star::before {
+    content: "";
     color: orange;
     font-size: 50px; }
+
+.icon-bespoke-software::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.icon-it-support::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.icon-digital-marketing::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.icon-telecoms-services::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.icon-web-design::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.icon-cyber-security::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
+
+.mdi-developer-training::before {
+  content: "";
+  color: #fff;
+  font-size: 2rem; }
 
 .card a {
   text-decoration: none; }
 
-.branding-title {
-  margin: -6px 0 40px; }
-
-.quote strong {
-  font-style: italic;
-  font-size: 1.3rem; }
-
-.client {
-  font-weight: 600; }
-  .client cite {
-    color: #a3a8ac;
-    font-style: normal;
-    font-size: 1.1rem; }
-
 a:hover {
   text-decoration: underline; }
+
+.card a:hover {
+  text-decoration: none; }
 
 .btn-prim:hover {
   background-color: #1c1e27;

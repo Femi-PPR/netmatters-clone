@@ -1,6 +1,13 @@
 .container{
     padding: 50px 15px;
     margin: 0 auto;
+
+    @include mq("md"){
+        width: 750px;
+    }
+    @include mq("lg"){
+        width: 970px;
+    }
 }
 
 .article-content{
@@ -38,4 +45,72 @@
 
 .client{
     margin-bottom: 45px;
+}
+
+.link-services{
+
+    &-top{
+        @include hidden;
+
+        @include mq("md"){
+            display: block;
+        }
+    }
+
+    &-btm{
+        margin: 0 auto;
+        text-align: center;
+
+        @include mq("md"){
+            display: none;
+        }
+    }
+}
+
+.card{
+    border: 1px solid $colour-card-border;
+    box-shadow: 0 3px 35px $colour-card-shadow;
+    text-align: center;
+    border-radius: 15px;
+    @include base-transition;
+    a{
+        display: block;
+        padding: 30px;
+    }
+}
+
+.cards-services{
+    display: grid;
+    gap: 30px;
+    
+    @include mq("lg"){
+        grid-template-areas:
+        "bespoke-software bespoke-software it-support it-support digital-marketing digital-marketing"
+        "telecoms-services telecoms-services telecoms-services web-design web-design web-design"
+        "cyber-security cyber-security cyber-security developer-training developer-training developer-training";
+    }
+
+    @include mq("x-lg"){
+        grid-template-areas: 
+        "bespoke-software bespoke-software bespoke-software bespoke-software it-support it-support it-support it-support digital-marketing digital-marketing digital-marketing digital-marketing"
+        "telecoms-services telecoms-services telecoms-services web-design web-design web-design cyber-security cyber-security cyber-security developer-training developer-training developer-training";
+    }
+    
+}
+
+@each $service, $colour in $services-colours{
+    .card-#{$service}{
+        @include mq("lg"){
+            grid-area: #{$service};
+        }
+    }
+
+    .wrapper-#{$service}{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include circle-icon(65px, $colour);
+        margin-bottom: 17px;
+    }
+    
 }

@@ -2,6 +2,12 @@ a:hover{
     text-decoration: underline;
 }
 
+.card {
+    a:hover{
+        text-decoration: none;
+    }
+}
+
 .btn{
     &-prim:hover{
         background-color: darken($colour-btn-dark, 5%);

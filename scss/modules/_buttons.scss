@@ -40,5 +40,11 @@
     &-quote{
         gap: 20px 8px;
     }
-
 }
+
+@each $service, $colour in $services-colours{
+    .btn-#{$service}{
+        background-color: $colour;
+    }
+}
+

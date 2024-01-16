@@ -1,19 +1,35 @@
+@charset "UTF-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('/fonts/icomoon.eot?x7c0h8');
-    src:  url('/fonts/icomoon.eot?x7c0h8#iefix') format('embedded-opentype'),
-      url('/fonts/icomoon.ttf?x7c0h8') format('truetype'),
-      url('/fonts/icomoon.woff?x7c0h8') format('woff'),
-      url('/fonts/icomoon.svg?x7c0h8#icomoon') format('svg');
+    src:  url('/fonts/icomoon.ttf?x7c0h8');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.0.3');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material-Design-Icons';
+    src: url('/fonts/Material-Design-Icons.woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 $stack-poppins: 'Poppins', sans-serif;
 $font-iconmoon: 'icomoon' !important;
+$font-fa: 'FontAwesome' !important;
+$font-mdi: 'Material-Design-Icons' !important;
 
 $font-weight-normal: 400;
 $font-weight-bold: 600;
@@ -29,18 +45,24 @@ $tundora: #444;
 $alto: #ddd;
 $white: #fff;
 $gray-chateau: #a3a8ac;
+$silver: #ccc;
 
 $dodger-blue: #4387f6;
 $dodger-blue-darker: darken($dodger-blue, 15%);
 $jade: #00b67b;
 $jade-darker: darken($jade, 15%);
 
+$hoki: #67809f;
+$havelock-blue: #4183d7;
+$shamock: #2ecc71;
+$valencia: #d64541;
+$wisteria: #926fb1;
+$punch: #ce4125;
 
 $colour-footer-bg           : $tuna-1;
 $colour-primary             : $tuna-2;
-$colour-text                : $dove-gray;
+$colour-text                : $tuna-2;
 $colour-btn-dark            : $charade;
-$colour-cyber-security      : $radical-red;
 $colour-footer-bg-drkr      : $ebony-clay;
 $colour-newsletters-bg      : $alto;
 $colour-btn-google          : $dodger-blue;
@@ -49,3 +71,37 @@ $colour-btn-trustpilot      : $jade;
 $colour-btn-trustpilot-hover: $jade-darker;
 $colour-star                : orange;
 $colour-citation            : $gray-chateau;
+$colour-card-border         : $silver;
+$colour-card-shadow         : rgba(black, .1);
+
+$services-colours: (
+    "bespoke-software"  : $hoki,
+    "it-support"        : $havelock-blue,
+    "digital-marketing" : $shamock,
+    "telecoms-services" : $valencia,
+    "web-design"        : $wisteria,
+    "cyber-security"    : $radical-red,
+    "developer-training": $punch,
+);
+
+$icon-star              : "\F005";
+$icon-rarrow            : "\E906";
+
+$services-icons: (
+    "bespoke-software"  : "\E918",
+    "it-support"        : "\E905",
+    "digital-marketing" : "\E904",
+    "telecoms-services" : "\E902",
+    "web-design"        : "\E908",
+    "cyber-security"    : "\E900",
+    "developer-training": "\E8DE",
+);
+
+$break-points : (
+    "md"    : 768px,
+    "lg"    : 992px,
+    "x-lg"  : 1260px,
+);
+
+
+

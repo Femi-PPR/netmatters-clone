@@ -11,6 +11,30 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+[class^="fa-"], [class*=" fa-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family:  $font-fa;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=" mdi-"],[class^=mdi-] {
+    font-family: Material-Design-Icons;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
 .icon-rarrow{
     &-link{
         @extend %icon-rarrow;
@@ -25,8 +49,24 @@
     }
 }
 
-.icon-star{
+.fa-star{
     margin-bottom: 25px;
-    @include icon("\e9d9", $colour-star, 50px);
+    @include icon($icon-star, $colour-star, 50px);
+}
+
+@each $service, $icon in $services-icons{
+    @if $service == "developer-training"{
+        .mdi-#{$service}{
+            @include icon($icon, $white, $fsize: 2rem);
+            // line-height: 63px;
+        }
+    }
+    @else{
+        .icon-#{$service}{
+            @include icon($icon, $white, $fsize: 2rem);
+            // line-height: 63px;
+        }
+    }
+    
 }
 

@@ -19,5 +19,9 @@ a:hover{
     &-trustpilot:hover{
         background-color: darken($colour-btn-trustpilot, 5%);
     }
+
+    &-carousel:hover{
+        text-decoration: none;
+    }
     
 }

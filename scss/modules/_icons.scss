@@ -1,5 +1,4 @@
 [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
     font-family:  $font-iconmoon;
     font-style: normal;
     font-weight: normal;
@@ -12,7 +11,6 @@
 }
 
 [class^="fa-"], [class*=" fa-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
     font-family:  $font-fa;
     font-style: normal;
     font-weight: normal;
@@ -25,7 +23,7 @@
 }
 
 [class*=" mdi-"],[class^=mdi-] {
-    font-family: Material-Design-Icons;
+    font-family: $font-mdi;
     speak: none;
     font-style: normal;
     font-weight: 400;
@@ -58,13 +56,11 @@
     @if $service == "developer-training"{
         .mdi-#{$service}{
             @include icon($icon, $white, $fsize: 2rem);
-            // line-height: 63px;
         }
     }
     @else{
         .icon-#{$service}{
             @include icon($icon, $white, $fsize: 2rem);
-            // line-height: 63px;
         }
     }
     

@@ -1,5 +1,6 @@
 *, ::after, ::before{
     box-sizing: border-box;
+    margin: 0;
 }
 
 body{
@@ -14,15 +15,21 @@ a{
     color: $colour-text;
 }
 
+h1{
+    font-size: 4rem;
+    line-height: 5rem;
+    @extend %bold;
+}
+
 h2{
     line-height: 1.1;
     font-size: 2.25rem;
-    font-weight: $font-weight-bold;
+    @extend %bold;
 }
 
 h3{
     font-size: 1.625rem;
-    font-weight: $font-weight-bold;
+    @extend %bold;
 }
 
 p{

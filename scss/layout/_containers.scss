@@ -8,6 +8,10 @@
     @include mq("lg"){
         width: 970px;
     }
+
+    @include mq("x-lg"){
+        width: 1200px;
+    }
 }
 
 .article-content{
@@ -74,16 +78,26 @@
     border-radius: 15px;
     @include base-transition;
     a{
-        display: block;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         padding: 30px;
+    }
+
+    .btn{
+        margin-top: auto;
     }
 }
 
 .cards-services{
     display: grid;
     gap: 30px;
-    
+
     @include mq("lg"){
+        grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
         "bespoke-software bespoke-software it-support it-support digital-marketing digital-marketing"
         "telecoms-services telecoms-services telecoms-services web-design web-design web-design"
@@ -91,12 +105,15 @@
     }
 
     @include mq("x-lg"){
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
         "bespoke-software bespoke-software bespoke-software bespoke-software it-support it-support it-support it-support digital-marketing digital-marketing digital-marketing digital-marketing"
         "telecoms-services telecoms-services telecoms-services web-design web-design web-design cyber-security cyber-security cyber-security developer-training developer-training developer-training";
     }
     
 }
+
+
 
 @each $service, $colour in $services-colours{
     .card-#{$service}{
@@ -113,4 +130,38 @@
         margin-bottom: 17px;
     }
     
+}
+
+.carousel{
+    height: 550px;
+    position: relative;
+    background-color: rgba(black, 0.5);
+    background-image: url('/img/backgrounds/cyber-security.webp');
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    h1{
+        margin-bottom: 1.25rem;
+    }
+    p{
+        margin-bottom: .375rem + 1.938rem;
+    }
+    a{
+        margin-bottom: 1.125rem;
+    }
+}
+
+.container-carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    @include mq("lg"){
+        align-items: start;
+        text-align: left;
+    }
 }

@@ -24,12 +24,22 @@
         background-color: $colour-btn-google;
         
     }
+
     &-trustpilot{
         @include no-border;
         background-color: $colour-btn-trustpilot;
         white-space: nowrap;
         max-width: fit-content;
         
+    }
+
+    &-carousel{
+        background-color: map-get($services-colours, "cyber-security");
+        padding: 5px 20px;
+        line-height: 50px;
+        i{
+            line-height: 50px;
+        }
     }
 }
 
@@ -48,3 +58,31 @@
     }
 }
 
+.dots{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:  (22.85px - 11px) / 2 + 44px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dot{
+    @include circle-icon(11px, rgba($white, 0.5));
+    position: relative;
+
+    &-active{
+        background-color: $white;
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            @include circle-icon(23px, transparent);
+            border: 2px solid $white;
+        }
+
+    }
+}

@@ -19,7 +19,8 @@
   font-style: normal;
   font-display: swap; }
 *, ::after, ::before {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0; }
 
 body {
   font-family: "Poppins", sans-serif;
@@ -31,14 +32,16 @@ a {
   text-decoration: none;
   color: #333645; }
 
+h1 {
+  font-size: 4rem;
+  line-height: 5rem; }
+
 h2 {
   line-height: 1.1;
-  font-size: 2.25rem;
-  font-weight: 600; }
+  font-size: 2.25rem; }
 
 h3 {
-  font-size: 1.625rem;
-  font-weight: 600; }
+  font-size: 1.625rem; }
 
 p {
   line-height: 1.875rem;
@@ -47,7 +50,8 @@ p {
 .heading {
   display: flex;
   justify-content: flex-start;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 40px; }
   .heading h2 {
     margin-right: auto; }
 
@@ -60,6 +64,9 @@ p {
   @media screen and (min-width: 992px) {
     .container {
       width: 970px; } }
+  @media screen and (min-width: 1260px) {
+    .container {
+      width: 1200px; } }
 
 .article-content {
   padding: 30px; }
@@ -105,17 +112,26 @@ p {
   border-radius: 15px;
   transition: .5s ease; }
   .card a {
-    display: block;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding: 30px; }
+  .card .btn {
+    margin-top: auto; }
 
 .cards-services {
   display: grid;
   gap: 30px; }
   @media screen and (min-width: 992px) {
     .cards-services {
+      grid-template-columns: repeat(6, 1fr);
       grid-template-areas: "bespoke-software bespoke-software it-support it-support digital-marketing digital-marketing" "telecoms-services telecoms-services telecoms-services web-design web-design web-design" "cyber-security cyber-security cyber-security developer-training developer-training developer-training"; } }
   @media screen and (min-width: 1260px) {
     .cards-services {
+      grid-template-columns: repeat(12, 1fr);
       grid-template-areas: "bespoke-software bespoke-software bespoke-software bespoke-software it-support it-support it-support it-support digital-marketing digital-marketing digital-marketing digital-marketing" "telecoms-services telecoms-services telecoms-services web-design web-design web-design cyber-security cyber-security cyber-security developer-training developer-training developer-training"; } }
 
 @media screen and (min-width: 992px) {
@@ -216,6 +232,34 @@ p {
   background: #ce4125;
   margin-bottom: 17px; }
 
+.carousel {
+  height: 550px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("/img/backgrounds/cyber-security.webp");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center; }
+  .carousel h1 {
+    margin-bottom: 1.25rem; }
+  .carousel p {
+    margin-bottom: 2.313rem; }
+  .carousel a {
+    margin-bottom: 1.125rem; }
+
+.container-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%; }
+  @media screen and (min-width: 992px) {
+    .container-carousel {
+      align-items: start;
+      text-align: left; } }
+
 .content__footer {
   background-color: #323544;
   color: #fff; }
@@ -234,7 +278,8 @@ p {
     font-style: normal;
     font-size: 1.1rem; }
 
-.heading h2 {
+.header-services {
+  display: inline;
   font-size: 2.7rem; }
 
 .card h2 {
@@ -247,8 +292,31 @@ p {
   line-height: 1.375rem;
   margin-bottom: 13px; }
 
+.carousel {
+  color: #fff; }
+  .carousel h1 {
+    font-size: 2.5rem;
+    line-height: 3rem; }
+    @media screen and (min-width: 992px) {
+      .carousel h1 {
+        font-size: 4rem;
+        line-height: 5rem; } }
+  .carousel p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600; }
+    @media screen and (min-width: 992px) {
+      .carousel p {
+        font-size: 1.625rem;
+        line-height: 2.5rem; } }
+  .carousel a {
+    font-size: 1.25rem; }
+
 .icon-rarrow-link::before, .icon-rarrow-btn::before {
   content: ""; }
+
+h1, h2, h3 {
+  font-weight: 600; }
 
 .btn {
   text-transform: uppercase;
@@ -276,6 +344,12 @@ p {
     background-color: #00b67b;
     white-space: nowrap;
     max-width: fit-content; }
+  .btn-carousel {
+    background-color: #f62459;
+    padding: 5px 20px;
+    line-height: 50px; }
+    .btn-carousel i {
+      line-height: 50px; }
 
 .btns {
   display: inline-flex;
@@ -305,8 +379,35 @@ p {
 .btn-developer-training {
   background-color: #ce4125; }
 
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 49.925px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; }
+
+.dot {
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  background: rgba(255, 255, 255, 0.5);
+  position: relative; }
+  .dot-active {
+    background-color: #fff; }
+    .dot-active::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      border-radius: 50%;
+      width: 23px;
+      height: 23px;
+      background: transparent;
+      border: 2px solid #fff; }
+
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   font-style: normal;
   font-weight: normal;
@@ -317,7 +418,6 @@ p {
   -moz-osx-font-smoothing: grayscale; }
 
 [class^="fa-"], [class*=" fa-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "FontAwesome" !important;
   font-style: normal;
   font-weight: normal;
@@ -328,7 +428,7 @@ p {
   -moz-osx-font-smoothing: grayscale; }
 
 [class*=" mdi-"], [class^=mdi-] {
-  font-family: Material-Design-Icons;
+  font-family: "Material-Design-Icons" !important;
   speak: none;
   font-style: normal;
   font-weight: 400;
@@ -402,5 +502,7 @@ a:hover {
   background-color: #2b77f5; }
 .btn-trustpilot:hover {
   background-color: #009d6a; }
+.btn-carousel:hover {
+  text-decoration: none; }
 
 /*# sourceMappingURL=styles.css.map */

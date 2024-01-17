@@ -18,10 +18,9 @@
     }
 }
 
-.heading{
-    h2{
-        font-size: 2.7rem;
-    }
+.header-services{
+    display: inline;
+    font-size: 2.7rem;
 }
 
 .card{
@@ -35,5 +34,33 @@
         font-size: .8125rem;
         line-height: 1.375rem;
         margin-bottom: 13px;
+    }
+}
+
+.carousel{
+    color: $white;
+
+    h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+
+        @include mq("lg"){
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+    }
+
+    p{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: $font-weight-bold;
+
+        @include mq("lg"){
+            font-size: 1.625rem;
+            line-height: 2.5rem;
+        }
+    }
+    a{
+        font-size: 1.25rem;
     }
 }

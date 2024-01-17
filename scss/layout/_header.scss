@@ -8,3 +8,43 @@
         margin-right: auto;
     }
 }
+
+.header-top{
+    padding: 20px 0;
+}
+
+
+.row{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+
+    .logo-header{
+        margin-right: auto;
+    }
+}
+
+
+.link-mobile{
+    @include mq("md"){
+        @include hidden;
+    }
+}
+
+.header-article{
+    position: relative;
+
+    .tag{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        padding: 0 10px;
+
+        @each $service, $colour in $services-colours{
+            &-#{$service}{
+                background-color: $colour;
+            }
+        }
+    }
+}

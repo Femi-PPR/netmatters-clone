@@ -33,6 +33,18 @@
     -moz-osx-font-smoothing: grayscale
 }
 
+[class*=" glyph-"],[class^=glyph-] {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: $font-glyph;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
 .icon-rarrow{
     &-link{
         @extend %icon-rarrow;
@@ -45,6 +57,27 @@
         display: inline-block;
         line-height: 35px;
     }
+}
+
+.icon{
+    &-mouse{
+        @include icon($icon-mouse, $fsize: 1.438rem);
+    }    
+    &-paperplane{
+        @include icon($icon-paperplane, $fsize: 1.438rem);
+    }
+    &-phone{
+        @include icon($icon-phone, $fsize: 32px);
+    }
+}
+
+
+.glyph-search{
+    @include icon($icon-search);
+}
+
+.i-header{
+    font-size: 23px;
 }
 
 .fa-star{
@@ -63,6 +96,5 @@
             @include icon($icon, $white, $fsize: 2rem);
         }
     }
-    
 }
 

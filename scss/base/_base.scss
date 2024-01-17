@@ -4,10 +4,18 @@
 }
 
 body{
-    font-family: $stack-poppins;
+    @include base-font;
     color: $colour-text;
     letter-spacing: .4px;
     margin: 0px;
+}
+
+button{
+    @include base-font;
+}
+
+input{
+    @include base-font;
 }
 
 a{
@@ -35,4 +43,8 @@ h3{
 p{
     line-height: 1.875rem;
     margin: 0 0 25px;
+}
+
+article{
+    @include base-transition;
 }

@@ -18,6 +18,9 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap; }
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/fonts/glyphicons-halflings-regular.woff"); }
 *, ::after, ::before {
   box-sizing: border-box;
   margin: 0; }
@@ -27,6 +30,12 @@ body {
   color: #333645;
   letter-spacing: .4px;
   margin: 0px; }
+
+button {
+  font-family: "Poppins", sans-serif; }
+
+input {
+  font-family: "Poppins", sans-serif; }
 
 a {
   text-decoration: none;
@@ -47,6 +56,9 @@ p {
   line-height: 1.875rem;
   margin: 0 0 25px; }
 
+article {
+  transition: .5s ease; }
+
 .heading {
   display: flex;
   justify-content: flex-start;
@@ -55,8 +67,45 @@ p {
   .heading h2 {
     margin-right: auto; }
 
+.header-top {
+  padding: 20px 0; }
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center; }
+  .row .logo-header {
+    margin-right: auto; }
+
+@media screen and (min-width: 768px) {
+  .link-mobile {
+    display: none; } }
+
+.header-article {
+  position: relative; }
+  .header-article .tag {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding: 0 10px; }
+    .header-article .tag-bespoke-software {
+      background-color: #67809f; }
+    .header-article .tag-it-support {
+      background-color: #4183d7; }
+    .header-article .tag-digital-marketing {
+      background-color: #2ecc71; }
+    .header-article .tag-telecoms-services {
+      background-color: #d64541; }
+    .header-article .tag-web-design {
+      background-color: #926fb1; }
+    .header-article .tag-cyber-security {
+      background-color: #f62459; }
+    .header-article .tag-developer-training {
+      background-color: #ce4125; }
+
 .container {
-  padding: 50px 15px;
+  padding: 0px 15px;
   margin: 0 auto; }
   @media screen and (min-width: 768px) {
     .container {
@@ -67,6 +116,21 @@ p {
   @media screen and (min-width: 1260px) {
     .container {
       width: 1200px; } }
+  .container-branding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; }
+    .container-branding div {
+      flex: 1; }
+    @media screen and (min-width: 992px) {
+      .container-branding {
+        flex-direction: row;
+        gap: 30px; } }
+  .container-services {
+    padding-top: 50px;
+    padding-bottom: 50px; }
 
 .article-content {
   padding: 30px; }
@@ -78,11 +142,6 @@ p {
     color: #fff; }
   .branding strong {
     font-weight: 600; }
-
-.container-branding {
-  display: flex;
-  flex-direction: column;
-  gap: 50px; }
 
 .client-quote {
   margin: 0px; }
@@ -260,6 +319,10 @@ p {
       align-items: start;
       text-align: left; } }
 
+.wrapper-news {
+  display: flex;
+  flex-direction: column; }
+
 .content__footer {
   background-color: #323544;
   color: #fff; }
@@ -292,6 +355,13 @@ p {
   line-height: 1.375rem;
   margin-bottom: 13px; }
 
+.btn-cookie {
+  line-height: 22px;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: capitalize;
+  color: #fff; }
+
 .carousel {
   color: #fff; }
   .carousel h1 {
@@ -311,6 +381,14 @@ p {
         line-height: 2.5rem; } }
   .carousel a {
     font-size: 1.25rem; }
+
+.tag {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  font-size: .75rem;
+  line-height: 1.438rem;
+  z-index: 1; }
 
 .icon-rarrow-link::before, .icon-rarrow-btn::before {
   content: ""; }
@@ -336,14 +414,65 @@ h1, h2, h3 {
     padding: 10px 30px;
     border-radius: 6px;
     font-size: 20px; }
-  .btn-google {
+  .btn-header {
+    display: none;
+    height: 56px;
+    line-height: 46px;
+    font-size: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .btn-header {
+        display: flex;
+        align-items: center;
+        gap: 5px; } }
+  .btn-cookie {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #75788a;
+    border: solid #75788a;
+    border-width: 1px 1px 0 0;
+    border-radius: 0 10px 0 0;
+    padding: 0 10px; }
+  .btn-hamburger {
     border: none;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    background-color: #333645; }
+  .btn-search-header {
+    display: inline-block;
+    outline: none;
+    padding: 7px 20px 3px;
+    height: 56px;
+    font-size: 1.063rem;
+    border-radius: 0 3px 3px 0;
+    border: none;
+    vertical-align: bottom;
+    background-color: #999aa2;
+    color: #fff; }
+    @media screen and (min-width: 992px) {
+      .btn-search-header {
+        border-radius: 3px; } }
+  .btn-search-mobile {
+    background: none;
+    border: none;
+    color: #333645;
+    position: absolute;
+    right: 5px;
+    line-height: 47px;
+    font-size: 20px;
+    outline: none; }
+  .btn-google {
     background-color: #4387f6; }
   .btn-trustpilot {
-    border: none;
-    background-color: #00b67b;
-    white-space: nowrap;
-    max-width: fit-content; }
+    background-color: #00b67b; }
+  .btn-support {
+    background-color: #4183d7; }
+  .btn-contact {
+    background-color: #999aa2; }
+  .btn-search-header {
+    background-color: #999aa2; }
   .btn-carousel {
     background-color: #f62459;
     padding: 5px 20px;
@@ -407,6 +536,36 @@ h1, h2, h3 {
       background: transparent;
       border: 2px solid #fff; }
 
+.hamburger-box {
+  width: 33px;
+  height: 19px;
+  display: inline-block;
+  position: relative; }
+.hamburger-inner {
+  width: 33px;
+  height: 4px;
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  top: 50%;
+  margin-top: -1.5px; }
+  .hamburger-inner::before {
+    content: '';
+    top: -10px;
+    width: 33px;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+    display: block; }
+  .hamburger-inner::after {
+    content: '';
+    bottom: -10px;
+    width: 33px;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+    display: block; }
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon" !important;
   font-style: normal;
@@ -437,12 +596,39 @@ h1, h2, h3 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+[class*=" glyph-"], [class^=glyph-] {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings" !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .icon-rarrow-btn {
   font-size: 20px;
   margin-right: -4px;
   margin-left: 12px;
   display: inline-block;
   line-height: 35px; }
+
+.icon-mouse::before {
+  content: "";
+  font-size: 1.438rem; }
+.icon-paperplane::before {
+  content: "";
+  font-size: 1.438rem; }
+.icon-phone::before {
+  content: "";
+  font-size: 32px; }
+
+.glyph-search::before {
+  content: ""; }
+
+.i-header {
+  font-size: 23px; }
 
 .fa-star {
   margin-bottom: 25px; }
@@ -486,11 +672,63 @@ h1, h2, h3 {
   color: #fff;
   font-size: 2rem; }
 
+.logo {
+  width: 100%; }
+
+.image-article {
+  width: 100%; }
+
 .card a {
   text-decoration: none; }
 
+.search-header {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .search-header {
+      display: block; } }
+
+.form-header {
+  display: flex; }
+  .form-header input {
+    display: inline-block;
+    border-radius: 0;
+    width: 174px;
+    height: 56px;
+    padding: 5px 15px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    color: #555;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+    @media screen and (min-width: 992px) {
+      .form-header input {
+        display: none; } }
+
+.search-mobile {
+  display: block; }
+  @media screen and (min-width: 768px) {
+    .search-mobile {
+      display: none; } }
+
+.form-mobile {
+  position: relative;
+  margin-top: 11px; }
+  .form-mobile input {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    color: #555;
+    height: 47px;
+    padding: 5px 40px 5px 15px;
+    font-size: 14px;
+    line-height: 1.42857143; }
+
 a:hover {
   text-decoration: underline; }
+
+button:hover {
+  cursor: pointer; }
 
 .card a:hover {
   text-decoration: none; }
@@ -503,6 +741,8 @@ a:hover {
 .btn-trustpilot:hover {
   background-color: #009d6a; }
 .btn-carousel:hover {
+  text-decoration: none; }
+.btn-header:hover {
   text-decoration: none; }
 
 /*# sourceMappingURL=styles.css.map */

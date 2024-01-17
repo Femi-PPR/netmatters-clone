@@ -19,19 +19,86 @@
         font-size: 20px;
     }
 
-    &-google{
-        @include no-border;
-        background-color: $colour-btn-google;
-        
+    &-header{
+        @include hidden;
+        height: 56px;
+        line-height: 46px;
+        font-size: 1.125rem;
+
+        @include mq("lg"){
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
     }
 
-    &-trustpilot{
-        @include no-border;
-        background-color: $colour-btn-trustpilot;
-        white-space: nowrap;
-        max-width: fit-content;
-        
+    &-cookie{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        background-color: $colour-cookie-bg;
+        border: solid $colour-cookie-bg;
+        border-width: 1px 1px 0 0;
+        border-radius: 0 10px 0 0;
+        padding: 0 10px; 
     }
+
+    &-hamburger{
+        @include no-border;
+        display: flex;
+        align-items: center;
+        height: 56px;
+        background-color: $colour-primary;
+    }
+
+    &-search-header{
+        display: inline-block;
+        outline: none;
+        padding: 7px 20px 3px;
+        height: 56px;
+        font-size: 1.063rem;
+        border-radius: 0 3px 3px 0;
+        border: none;
+        vertical-align: bottom;
+        background-color: #999aa2;
+        color: #fff;
+
+        @include mq("lg"){
+            border-radius: 3px;
+        }
+    }
+
+    &-search-mobile{
+        background: none;
+        border: none;
+        color: $colour-primary;
+        position: absolute;
+        right: 5px;
+        line-height: 47px;
+        font-size: 20px;
+        outline: none;
+    }
+
+    @each $btn, $colour in $btn-colours{
+        &-#{$btn}{
+            background-color: $colour;
+        }
+    }
+
+    // &-google{
+    //     @include no-border;
+    //     background-color: $colour-btn-google;
+        
+    // }
+
+    // &-trustpilot{
+    //     @include no-border;
+    //     background-color: $colour-btn-trustpilot;
+    //     // white-space: nowrap;
+    //     // max-width: fit-content;
+        
+    // }
 
     &-carousel{
         background-color: map-get($services-colours, "cyber-security");
@@ -85,4 +152,34 @@
         }
 
     }
+}
+
+.hamburger{
+    &-box{
+        width: 33px;
+        height: 19px;
+        display: inline-block;
+        position: relative;
+        
+    }
+
+    &-inner{
+        @include hamburger-slice;
+        top: 50%;
+        margin-top: -1.5px;
+
+        &::before{
+            content: '';
+            top: -10px;
+            @include hamburger-slice;
+
+        }
+
+        &::after{
+            content: '';
+            bottom: -10px;
+            @include hamburger-slice;
+        }
+    }
+   
 }

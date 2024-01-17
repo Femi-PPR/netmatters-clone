@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
@@ -26,14 +24,21 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('/fonts/glyphicons-halflings-regular.woff');
+}
+
 $stack-poppins: 'Poppins', sans-serif;
 $font-iconmoon: 'icomoon' !important;
 $font-fa: 'FontAwesome' !important;
 $font-mdi: 'Material-Design-Icons' !important;
+$font-glyph: 'Glyphicons Halflings' !important;
 
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 
+// ---------COLOURS----------------
 
 $tuna-1: #323544;
 $tuna-2: #333645;
@@ -46,6 +51,10 @@ $alto: #ddd;
 $white: #fff;
 $gray-chateau: #a3a8ac;
 $silver: #ccc;
+$storm-gray: #75788a;
+$emperor: #555;
+$mecury: #e5e5e5;
+$manatee: #999aa2;
 
 $dodger-blue: #4387f6;
 $dodger-blue-darker: darken($dodger-blue, 15%);
@@ -58,6 +67,8 @@ $shamock: #2ecc71;
 $valencia: #d64541;
 $wisteria: #926fb1;
 $punch: #ce4125;
+
+// ---------FUNCTIONAL COLOUR NAMES----------------
 
 $colour-footer-bg           : $tuna-1;
 $colour-primary             : $tuna-2;
@@ -73,6 +84,29 @@ $colour-star                : orange;
 $colour-citation            : $gray-chateau;
 $colour-card-border         : $silver;
 $colour-card-shadow         : rgba(black, .1);
+$colour-cookie-bg           : $storm-gray;
+
+$btn-colours: (
+    "google"        : $dodger-blue,
+    "trustpilot"    : $jade,
+    "support"       : $havelock-blue,
+    "contact"       : $manatee,
+    "search-header" : $manatee,
+);
+
+$search-mobile-colours: (
+    "input-bg"      : rgba(black, .1),
+    "input-border"  : rgba(black, .1),
+    "input-shadow"  : rgba(black, .075),
+    "input-colour"  : $emperor,
+);
+
+$search-header-colours: (
+    "input-bg" : white,
+    "input-border": $mecury,
+    "input-shadow" : rgba(black, .075),
+    "input-colour"  : $emperor,
+);
 
 $services-colours: (
     "bespoke-software"  : $hoki,
@@ -84,8 +118,14 @@ $services-colours: (
     "developer-training": $punch,
 );
 
+
+// ---------ICONS----------------
 $icon-star              : "\F005";
 $icon-rarrow            : "\E906";
+$icon-phone             : "\E902";
+$icon-search            : "\E003";
+$icon-paperplane        : "\E90C";
+$icon-mouse             : "\E903";
 
 $services-icons: (
     "bespoke-software"  : "\E918",

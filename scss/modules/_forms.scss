@@ -1,0 +1,52 @@
+.search-header{
+    @include hidden;
+    @include mq("md"){
+        display: block;
+    }
+}
+
+.form-header{
+    display: flex;
+
+    input{
+        display: inline-block;
+        border-radius: 0;
+        width: 174px;
+        height: 56px;
+        padding: 5px 15px;
+        background-color: map-get($search-header-colours, "input-bg");
+        border: 1px solid map-get($search-header-colours, "input-border");
+        box-shadow: inset 0 1px 1px map-get($search-header-colours, "input-shadow");
+        color: map-get($search-header-colours, "input-colour");
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+        @include mq("lg"){
+            @include hidden;
+        }
+    }
+}
+
+.search-mobile{
+    display: block;
+
+    @include mq("md"){
+        display: none;
+    }
+}
+
+.form-mobile{
+    position: relative;
+    margin-top: 11px;
+
+    input{
+        width: 100%;
+        background-color: map-get($search-mobile-colours, "input-bg" );
+        border: 2px solid map-get($search-mobile-colours, "input-border" );
+        box-shadow: inset 0 1px 1px map-get($search-mobile-colours, "input-shadow");
+        color: map-get($search-mobile-colours, "input-colour");
+        height: 47px;
+        padding: 5px 40px 5px 15px;
+        font-size: 14px;
+        line-height: 1.42857143;
+    }
+}

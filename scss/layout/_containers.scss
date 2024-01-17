@@ -1,5 +1,5 @@
 .container{
-    padding: 50px 15px;
+    padding: 0px 15px;
     margin: 0 auto;
 
     @include mq("md"){
@@ -11,6 +11,26 @@
 
     @include mq("x-lg"){
         width: 1200px;
+    }
+
+    &-branding{
+        @include py(50px);
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        div{
+            flex: 1;
+        }
+
+        @include mq("lg"){
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+
+    &-services{
+        @include py(50px);
     }
 }
 
@@ -33,11 +53,7 @@
     
 } 
 
-.container-branding{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
+
 
 .client-quote{
     margin: 0px;
@@ -164,4 +180,9 @@
         align-items: start;
         text-align: left;
     }
+}
+
+.wrapper-news{
+    display: flex;
+    flex-direction: column;
 }

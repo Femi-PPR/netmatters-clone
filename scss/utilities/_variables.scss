@@ -84,7 +84,7 @@ $colour-cookie-bg           : $storm-gray;
 $colour-article-border      : $silver;
 $colour-article-shadow      : rgba(black, .1);
 $colour-read-time           : rgba($tuna-2, .5);
-$colour-post-time           : $dove-gray;
+$colour-article-text        : $dove-gray;
 
 $btn-colours: (
     "google"        : $dodger-blue,
@@ -126,6 +126,7 @@ $icon-phone             : "\E902";
 $icon-search            : "\E003";
 $icon-paperplane        : "\E90C";
 $icon-mouse             : "\E903";
+$icon-checked           : "\E623";
 
 $services-icons: (
     "bespoke-software"  : "\E918",
@@ -138,6 +139,7 @@ $services-icons: (
 );
 
 $break-points : (
+    "sm"    : 480px,
     "md"    : 768px,
     "lg"    : 992px,
     "x-lg"  : 1260px,

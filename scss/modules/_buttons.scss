@@ -5,7 +5,7 @@
     height: auto;
     line-height: 35px;
     padding: 5px 15px;
-    background-color: $colour-btn-dark;
+    background-color: $colour-primary;
     font-size: 1.063rem;
     font-weight: $font-weight-normal;
     border: 1px solid transparent;
@@ -14,6 +14,7 @@
     vertical-align: middle;
 
     &-prim{
+        background-color: $colour-btn-dark;
         padding: 10px 30px;
         border-radius: 6px;
         font-size: 20px;
@@ -49,7 +50,6 @@
         display: flex;
         align-items: center;
         height: 56px;
-        background-color: $colour-primary;
     }
 
     &-search-header{
@@ -84,20 +84,6 @@
             background-color: $colour;
         }
     }
-
-    // &-google{
-    //     @include no-border;
-    //     background-color: $colour-btn-google;
-        
-    // }
-
-    // &-trustpilot{
-    //     @include no-border;
-    //     background-color: $colour-btn-trustpilot;
-    //     // white-space: nowrap;
-    //     // max-width: fit-content;
-        
-    // }
 
     &-carousel{
         background-color: map-get($services-colours, "cyber-security");

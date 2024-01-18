@@ -12,13 +12,7 @@
         display: inline-block;
         border-radius: 0;
         width: 174px;
-        height: 56px;
-        padding: 5px 15px;
-        background-color: map-get($search-header-colours, "input-bg");
-        border: 1px solid map-get($search-header-colours, "input-border");
-        box-shadow: inset 0 1px 1px map-get($search-header-colours, "input-shadow");
-        color: map-get($search-header-colours, "input-colour");
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        @extend %input-styles;
 
         @include mq("lg"){
             @include hidden;
@@ -49,4 +43,93 @@
         font-size: 14px;
         line-height: 1.42857143;
     }
+}
+
+.form-newsletter{
+    padding: 50px 0;
+
+    h2{
+        font-weight: $font-weight-normal;
+        margin: 0 0 15px;
+        font-size: 2rem;
+    }
+}
+
+.inputs-newsletter{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 15px 30px;
+
+    @include mq("lg"){
+        flex-direction: row;
+    }
+    div{
+        flex: 1;
+    }
+
+    label{
+        display: block;
+        line-height: 1.42857143;
+        font-size: 1rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: 5px;
+
+        &.required::after{
+            content: " *";
+            color: #d24d57;
+        }
+    }
+
+    input{
+        width: 100%;
+        @extend %input-styles;
+        height: 47px;
+        border-color: #ccc;
+    }
+}
+
+.checkbox{
+    &-label{
+        cursor: pointer;
+    }
+
+    &-border{
+        border-radius: 3px;
+        border: 3px solid $colour-primary;
+        position: relative;
+        height: 32px;
+        width: 32px;
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        display: flex;
+        flex-basis: 32px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-newsletter{
+        visibility: hidden;
+
+        &:checked::before{
+            visibility: visible;
+        }
+    }
+
+    &-text{
+        display: inline-block;
+        flex: 1;
+        line-height: 32px;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.wrapper-checkbox{
+    display: flex;
+    margin-bottom:  (111.5px + 15px) - 96px;
+}
+
+.privacy-policy{
+    text-decoration: underline;
 }

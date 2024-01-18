@@ -1,6 +1,8 @@
-.content__footer{
+.footer-main{
     background-color: $colour-footer-bg;
-    color: $white;
+    h4{
+        margin-bottom: 26px;
+    }
 }
 
 .footer-article{

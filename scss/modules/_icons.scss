@@ -85,6 +85,16 @@
     @include icon($icon-star, $colour-star, 50px);
 }
 
+.mdi-checked{
+    @include icon($icon-checked, $white, 22px){
+        @include abs-pos(0,0,0,0);
+        background-color: $colour-primary;
+        line-height: 26px;
+        text-align: center;
+    }
+
+}
+
 @each $service, $icon in $services-icons{
     @if $service == "developer-training"{
         .mdi-#{$service}{

@@ -1,5 +1,14 @@
 .logo{
     width: 100%;
+
+    &-footer{
+        width: 250px;
+        margin-bottom: 24px;
+
+        @include mq("sm"){
+            width: 320px;
+        }
+    }
 }
 .image-article{
     width: 100%;

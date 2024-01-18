@@ -83,7 +83,7 @@
 }
 
 .article-content{
-    color: $colour-post-time;
+    color: $colour-article-text;
 
     h3{
         font-size: 1rem;
@@ -117,5 +117,14 @@
     strong{
         color: black;
         font-weight: $font-weight-bold;
+    }
+}
+
+.footer-main{
+    h4{
+        color: $white;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: $font-weight-normal;
     }
 }

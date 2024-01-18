@@ -42,7 +42,7 @@
             min-height: 3rem;
         }
     }
-    
+
     @include mq-range("md", "x-lg"){
         &:last-child{
             @include hidden;
@@ -221,4 +221,8 @@
 
 .link-article{
     @include abs-pos(0, 0, 0, 0);
+}
+
+.newsletter{
+    background-color: $colour-newsletters-bg;
 }

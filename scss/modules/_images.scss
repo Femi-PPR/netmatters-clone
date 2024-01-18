@@ -4,3 +4,7 @@
 .image-article{
     width: 100%;
 }
+
+.avatar{
+    @include circle-icon(47px, null);
+}

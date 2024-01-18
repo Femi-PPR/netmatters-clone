@@ -34,8 +34,35 @@
     }
 }
 
+.article-news{
+    flex: 1;
+
+    @include mq("md"){
+        h3{
+            min-height: 3rem;
+        }
+    }
+    
+    @include mq-range("md", "x-lg"){
+        &:last-child{
+            @include hidden;
+        }
+        
+    }
+}
+
 .article-content{
     padding: 30px;
+    border: 1px solid $colour-article-border;
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+    font-size: .8125rem;
+    
+    box-shadow: 0 3px 35px $colour-article-shadow;
+
+    h3{
+        margin-bottom: 15px;
+    }
 }
 
 .branding{
@@ -185,4 +212,13 @@
 .wrapper-news{
     display: flex;
     flex-direction: column;
+    gap: 30px;
+
+    @include mq("md"){
+        flex-direction: row;
+    }
+}
+
+.link-article{
+    @include abs-pos(0, 0, 0, 0);
 }

@@ -81,3 +81,41 @@
     line-height: 1.438rem;
     z-index: 1;
 }
+
+.article-content{
+    color: $colour-post-time;
+
+    h3{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    p{
+        line-height: 1.375rem;
+        font-size: .8125rem;
+    }
+
+    .read-time{
+        text-transform: uppercase;
+        font-weight: $font-weight-normal;
+        color: $colour-read-time;
+        font-size: .85rem;
+    }
+}
+
+@each $service, $colour in $services-colours{
+    .title-#{$service}{
+        color: $colour;
+    }
+}
+
+.footer-article{
+    
+    font-size: .875rem;
+    line-height: 1.375rem;
+
+    strong{
+        color: black;
+        font-weight: $font-weight-bold;
+    }
+}

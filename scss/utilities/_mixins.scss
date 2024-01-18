@@ -33,6 +33,14 @@
     display: block;
 }
 
+@mixin abs-pos($t: null, $r: null, $b: null, $l: null){
+    position: absolute;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+}
+
 @mixin base-font{
     font-family: $stack-poppins;
 }
@@ -40,6 +48,16 @@
 @mixin mq($brk){
     $value: map-get($break-points, $brk);
     @media screen and (min-width: $value) {
+        &{
+            @content;
+        }
+    }
+}
+
+@mixin mq-range($l-brk, $u-brk){
+    $lb: map-get($break-points, $l-brk);
+    $ub: map-get($break-points, $u-brk);
+    @media screen and (min-width: $lb) and (max-width: ($ub - 1)) {
         &{
             @content;
         }

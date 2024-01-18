@@ -73,8 +73,7 @@
         background: none;
         border: none;
         color: $colour-primary;
-        position: absolute;
-        right: 5px;
+        @include abs-pos($r: 5px);
         line-height: 47px;
         font-size: 20px;
         outline: none;
@@ -126,10 +125,7 @@
 }
 
 .dots{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom:  (22.85px - 11px) / 2 + 44px;
+    @include abs-pos($r: 0, $b: (22.85px - 11px) / 2 + 44px, $l: 0);
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -144,9 +140,7 @@
 
         &::after{
             content: "";
-            position: absolute;
-            top: -6px;
-            left: -6px;
+            @include abs-pos($t: -6px, $l: -6px);
             @include circle-icon(23px, transparent);
             border: 2px solid $white;
         }

@@ -34,11 +34,11 @@
 
 .header-article{
     position: relative;
+    margin-bottom: 259.531px - 266.031px;
 
     .tag{
-        position: absolute;
-        right: 0;
-        top: 10px;
+        
+        @include abs-pos($t: 10px, $r: 0);
         padding: 0 10px;
 
         @each $service, $colour in $services-colours{

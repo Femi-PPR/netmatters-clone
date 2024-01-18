@@ -18,10 +18,10 @@ button:hover{
         text-decoration: none;
     }
     &-google:hover{
-        background-color: darken($colour-btn-google, 5%);
+        background-color: darken(map-get($btn-colours, "google"), 5%);
     }
     &-trustpilot:hover{
-        background-color: darken($colour-btn-trustpilot, 5%);
+        background-color: darken(map-get($btn-colours, "trustpilot"), 5%);
     }
 
     &-carousel:hover{

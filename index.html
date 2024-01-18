@@ -387,29 +387,43 @@
             
             </section>
             
-            <section class="newsletters">
+            <section class="newsletter">
                 <div class="container">
-                    <form class="newsletter" action="index.html">
+                    <form class="form-newsletter" action="index.html">
                         <h2>Email Newsletter Sign-Up</h2>
-                        <div>
-                            <label for="name">Your Name</label><input id="name" type="text">
-                            <label for="email">Your Email</label><input id="email" type="text">
+                        <div class="inputs-newsletter">
+                            <div>
+                                <label class="required" for="name">Your Name</label><input id="name" type="text">
+                            </div>
+                            <div>
+                                <label class="required" for="email">Your Email</label><input id="email" type="text">
+                            </div>
                         </div>
-                        <div>
-                            <span></span>
-                            <strong>
-                                Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.
-                            </strong>
-                        </div>
+                        <label class="checkbox-label" for="pretty-checkbox">
+                            <div class="wrapper-checkbox">
+                                <span class="checkbox-border">
+                                    <input type="checkbox" class="checkbox-newsletter mdi-checked" id="pretty-checkbox">
+                                </span>
+                                <strong class="checkbox-text">
+                                    Please tick this box if you wish to receive marketing information from us. Please see our <a href="#" class="privacy-policy">Privacy Policy</a> for more information on how we keep your data safe.
+                                </strong>
+                            </div>
+                        </label>
+                        
                         <button class="btn">Subscribe</button>
                     </form>
                 </div>
             </section>
         </main>
 
-        <footer class="content__footer">
+        <footer class="footer-main">
         <div class="container">
-            <img src="img/logos/nm-logo-white.webp" alt="Netmatters Logo">
+            <div class="logo-footer">
+                <img src="img/logos/nm-logo-white.webp" class="logo" alt="Netmatters Logo">
+            </div>
+            <h4>
+                Follow us on:
+            </h4>
             <div class="socials">
                 <a href="#"></a>
                 <a href="#"></a>

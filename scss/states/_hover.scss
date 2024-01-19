@@ -33,3 +33,54 @@ button:hover{
     }
     
 }
+
+.nav-link:hover{
+    text-decoration: none;
+}
+
+.nav-item-header:hover{
+    i::before{
+        color: $white;
+    }
+
+    .submenu{
+        display: block;
+        @include abs-pos($t:100%, $l:0);
+        color: $white;
+        min-width: 100%;
+        z-index: 10;
+    }
+
+    .submenu-link{
+        color: $white;
+    }
+}
+
+.item{
+    @each $service, $colour in $services-colours{
+        &-#{$service}{
+            .submenu{
+                background-color: darken($colour, 10%);
+            }
+
+            
+
+            &:hover{
+                background-color: $colour;
+
+                .nav-link::before{
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -35px;
+                    transform: translateX(-50%);
+                    z-index: 90;
+                    border-style: solid;
+                    border-width: 35px 68px 0;
+                    border-color: $colour transparent transparent;
+                }
+            }
+        }
+    }
+}
+

@@ -45,6 +45,14 @@ p{
     margin: 0 0 25px;
 }
 
+ul{
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
 article{
     @include base-transition;
     position: relative;

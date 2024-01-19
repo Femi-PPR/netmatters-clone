@@ -65,3 +65,8 @@
         content: "- ";
     }
 }
+
+@debug #166af4;
+@debug darken(map-get($btn-colours, "google"), 9.2%);
+@debug #009b69;
+@debug darken(map-get($btn-colours, "trustpilot"), 5.3%);

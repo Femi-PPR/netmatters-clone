@@ -56,6 +56,12 @@ p {
   line-height: 1.875rem;
   margin: 0 0 25px; }
 
+ul {
+  padding: 0; }
+
+li {
+  list-style: none; }
+
 article {
   transition: .5s ease;
   position: relative; }
@@ -72,12 +78,18 @@ article {
   padding: 20px 0; }
 
 .row {
+  margin-right: -15px;
+  margin-left: -15px;
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  align-items: center; }
+  align-items: center;
+  height: 70px; }
   .row .logo-header {
-    margin-right: auto; }
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 41.6666666667%; }
 
 @media screen and (min-width: 768px) {
   .link-mobile {
@@ -618,7 +630,7 @@ h1, h2, h3 {
     vertical-align: bottom;
     background-color: #999aa2;
     color: #fff; }
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 992px) and (max-width: 1259px) {
       .btn-search-header {
         border-radius: 3px; } }
   .btn-search-mobile {
@@ -771,15 +783,15 @@ h1, h2, h3 {
     color: white; }
 
 .navs-header {
-  margin-right: -15px;
-  margin-left: -15px;
   background-color: #333645;
+  position: relative;
   display: none; }
-  .navs-header ul {
+  .navs-header .nav-header {
     display: flex;
     padding: 0; }
   .navs-header li {
-    list-style: none;
+    list-style: none; }
+  .navs-header .nav-item-header {
     flex: 1 calc((100% - 0px * (7 - 1)) / 7); }
   @media screen and (min-width: 992px) {
     .navs-header {
@@ -790,8 +802,9 @@ h1, h2, h3 {
 .nav-link {
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  display: block;
   padding: 19px 0 18px;
   text-transform: uppercase;
   font-size: 1.125rem;
@@ -838,6 +851,30 @@ h1, h2, h3 {
   @media screen and (min-width: 992px) {
     .navs-footer nav {
       flex: 1 calc((100% - 30px * (4 - 1)) / 4); } }
+
+.submenu {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .submenu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 0;
+    margin-top: 15px; }
+  .submenu-item {
+    flex: 1 calc((100% - 0px * (3 - 1)) / 3);
+    font-size: 1.2rem;
+    line-height: 1.313rem; }
+
+.nav-submenu {
+  padding: 0;
+  margin-top: -4px; }
+
+.title-submenu {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.1; }
 
 [class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon" !important;
@@ -978,8 +1015,124 @@ h1, h2, h3 {
   color: #fff;
   font-size: 26px; }
 
+.fa-cogs::before {
+  content: ""; }
+
+.glyph-briefcase::before {
+  content: ""; }
+
+.glyph-random::before {
+  content: ""; }
+
+.glyph-phone::before {
+  content: ""; }
+
+.glyph-folder-open::before {
+  content: ""; }
+
+.glyph-transfer::before {
+  content: ""; }
+
+.glyph-download-alt::before {
+  content: ""; }
+
+.fa-users::before {
+  content: ""; }
+
+.fa-laptop::before {
+  content: ""; }
+
+.fa-cloud::before {
+  content: ""; }
+
+.fa-cloud-download::before {
+  content: ""; }
+
+.fa-globe::before {
+  content: ""; }
+
+.glyph-headphones::before {
+  content: ""; }
+
+.fa-briefcase::before {
+  content: ""; }
+
+.mdi-social-school::before {
+  content: ""; }
+
+.glyph-hdd::before {
+  content: ""; }
+
+.fa-search::before {
+  content: ""; }
+
+.fa-money::before {
+  content: ""; }
+
+.mdi-action-trending-up::before {
+  content: ""; }
+
+.fa-envelope::before {
+  content: ""; }
+
+.fa-pencil::before {
+  content: ""; }
+
+.fa-ticket::before {
+  content: ""; }
+
+.fa-phone::before {
+  content: ""; }
+
+.fa-phone-square::before {
+  content: ""; }
+
+.fa-tachometer::before {
+  content: ""; }
+
+.icon-handshake-o::before {
+  content: ""; }
+
+.mdi-notification-phone-in-talk::before {
+  content: ""; }
+
+.glyph-shopping-cart::before {
+  content: ""; }
+
+.fa-desktop::before {
+  content: ""; }
+
+.fa-bullhorn::before {
+  content: ""; }
+
+.glyph-cloud::before {
+  content: "☁"; }
+
+.fa-clipboard::before {
+  content: ""; }
+
+.fa-clock-o::before {
+  content: ""; }
+
+.fa-flask::before {
+  content: ""; }
+
+.mdi-hardware-security::before {
+  content: ""; }
+
+.fa-lock::before {
+  content: ""; }
+
+.icon-code::before {
+  content: ""; }
+
+.fa-question-circle::before {
+  content: ""; }
+
 .logo {
   width: 100%; }
+  .logo-header {
+    width: 41.6666666667%; }
   .logo-footer {
     width: 250px;
     margin-bottom: 16px; }
@@ -1009,10 +1162,15 @@ h1, h2, h3 {
   .form-header input {
     display: inline-block;
     border-radius: 0;
-    width: 174px; }
-    @media screen and (min-width: 992px) {
+    width: 174px;
+    border-color: #ccc;
+    font-size: 14px; }
+    @media screen and (min-width: 992px) and (max-width: 1259px) {
       .form-header input {
         display: none; } }
+    @media screen and (min-width: 1260px) {
+      .form-header input {
+        width: 240px; } }
 
 .search-mobile {
   display: block; }
@@ -1117,5 +1275,120 @@ button:hover {
   text-decoration: none; }
 .btn-header:hover {
   text-decoration: none; }
+
+.nav-link:hover {
+  text-decoration: none; }
+
+.nav-item-header:hover i::before {
+  color: #fff; }
+.nav-item-header:hover .submenu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #fff;
+  min-width: 100%;
+  z-index: 10; }
+.nav-item-header:hover .submenu-link {
+  color: #fff; }
+
+.item-bespoke-software .submenu {
+  background-color: #526781; }
+.item-bespoke-software:hover {
+  background-color: #67809f; }
+  .item-bespoke-software:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #67809f transparent transparent; }
+.item-it-support .submenu {
+  background-color: #286abd; }
+.item-it-support:hover {
+  background-color: #4183d7; }
+  .item-it-support:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #4183d7 transparent transparent; }
+.item-digital-marketing .submenu {
+  background-color: #25a25a; }
+.item-digital-marketing:hover {
+  background-color: #2ecc71; }
+  .item-digital-marketing:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #2ecc71 transparent transparent; }
+.item-telecoms-services .submenu {
+  background-color: #bc2c28; }
+.item-telecoms-services:hover {
+  background-color: #d64541; }
+  .item-telecoms-services:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #d64541 transparent transparent; }
+.item-web-design .submenu {
+  background-color: #79539a; }
+.item-web-design:hover {
+  background-color: #926fb1; }
+  .item-web-design:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #926fb1 transparent transparent; }
+.item-cyber-security .submenu {
+  background-color: #de093f; }
+.item-cyber-security:hover {
+  background-color: #f62459; }
+  .item-cyber-security:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #f62459 transparent transparent; }
+.item-developer-training .submenu {
+  background-color: #a3331d; }
+.item-developer-training:hover {
+  background-color: #ce4125; }
+  .item-developer-training:hover .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: 90;
+    border-style: solid;
+    border-width: 35px 68px 0;
+    border-color: #ce4125 transparent transparent; }
 
 /*# sourceMappingURL=styles.css.map */

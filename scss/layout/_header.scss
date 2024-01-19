@@ -15,13 +15,17 @@
 
 
 .row{
+    @include mx(-15px);
     display: flex;
     justify-content: flex-start;
     gap: 20px;
     align-items: center;
+    height: 70px;
 
     .logo-header{
         margin-right: auto;
+        @include px(15px);
+        width: percentage(5/12);
     }
 }
 

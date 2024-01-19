@@ -13,9 +13,16 @@
         border-radius: 0;
         width: 174px;
         @extend %input-styles;
+        border-color: #ccc;
+        font-size: 14px;
 
-        @include mq("lg"){
+
+        @include mq-range("lg", "x-lg"){
             @include hidden;
+        }
+
+        @include mq("x-lg"){
+            width: 240px;
         }
     }
 }

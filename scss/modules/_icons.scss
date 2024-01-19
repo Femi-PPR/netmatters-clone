@@ -120,3 +120,9 @@
         }
     }
 }
+
+@each $submenu, $icon in $submenu-icons{
+    .#{$submenu}{
+        @include icon($icon);
+    }
+}

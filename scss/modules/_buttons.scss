@@ -64,7 +64,7 @@
         background-color: #999aa2;
         color: #fff;
 
-        @include mq("lg"){
+        @include mq-range("lg", "x-lg"){
             border-radius: 3px;
         }
     }

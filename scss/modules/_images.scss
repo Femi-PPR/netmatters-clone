@@ -1,6 +1,10 @@
 .logo{
     width: 100%;
 
+    &-header{
+        width: percentage(5/12);
+    }
+
     &-footer{
         width: 250px;
         margin-bottom: 16px;

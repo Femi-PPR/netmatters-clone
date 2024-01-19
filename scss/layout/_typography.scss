@@ -128,3 +128,44 @@
         font-weight: $font-weight-normal;
     }
 }
+
+.p-footer{
+    display: flex;
+    font-size: .8125rem;
+    line-height: 1.42857143;
+    flex-direction: column;
+    padding: 5px 0 10px;
+    justify-content: flex-start;
+    align-items: start;
+
+    @include mq("md"){
+        display: inline-block;
+        margin-top: -2px;
+    }
+
+    span{
+        color: $white;
+
+        &:last-of-type{
+            line-height: 1.375rem;
+            margin-top: -2px;
+            @include mq("md"){
+                margin-left: -3px;
+            }
+        }
+    }
+
+    a{
+        color: $white;
+    }
+
+    span:last-of-type::before{
+        content: "-";
+        @include mx(9px);
+        display: none;
+
+        @include mq("md"){
+            display: inline;
+        }
+    }
+}

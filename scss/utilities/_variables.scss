@@ -1,8 +1,15 @@
+
+$font-path-local: "../fonts";
+$img-path-local: "../img";
+
+
+// ----- FONTS --------
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('/fonts/icomoon.ttf?x7c0h8');
+    src:  url('#{$font-path-local}/icomoon.ttf?x7c0h8');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -10,7 +17,7 @@
 
 @font-face {
     font-family: 'FontAwesome';
-    src: url('/fonts/fontawesome-webfont.woff?v=4.0.3');
+    src: url('#{$font-path-local}/fontawesome-webfont.woff?v=4.0.3');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,7 +25,7 @@
 
 @font-face {
     font-family: 'Material-Design-Icons';
-    src: url('/fonts/Material-Design-Icons.woff');
+    src: url('#{$font-path-local}/Material-Design-Icons.woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -26,7 +33,7 @@
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url('/fonts/glyphicons-halflings-regular.woff');
+    src: url('#{$font-path-local}/glyphicons-halflings-regular.woff');
 }
 
 $stack-poppins: 'Poppins', sans-serif;
@@ -37,6 +44,8 @@ $font-glyph: 'Glyphicons Halflings' !important;
 
 $font-weight-normal: 400;
 $font-weight-bold: 600;
+
+
 
 // ---------COLOURS----------------
 
@@ -68,6 +77,11 @@ $valencia: #d64541;
 $wisteria: #926fb1;
 $punch: #ce4125;
 
+$chambray: #3b5998;
+$deep-cerulean: #0077b5;
+$cerulean: #00aced;
+$cerise: #d93175;
+
 // ---------FUNCTIONAL COLOUR NAMES----------------
 
 $colour-footer-bg           : $tuna-1;
@@ -85,6 +99,7 @@ $colour-article-border      : $silver;
 $colour-article-shadow      : rgba(black, .1);
 $colour-read-time           : rgba($tuna-2, .5);
 $colour-article-text        : $dove-gray;
+$colour-btn-social          : #212330;
 
 $btn-colours: (
     "google"        : $dodger-blue,
@@ -143,6 +158,20 @@ $break-points : (
     "md"    : 768px,
     "lg"    : 992px,
     "x-lg"  : 1260px,
+);
+
+$socials-icons: (
+    "facebook"  : "\E907",
+    "linkedin"  : "\F0E1",
+    "twitter"   : "\E90B",
+    "instagram" : "\E909",
+);
+
+$socials-colours: (
+    "facebook"  : $chambray,
+    "linkedin"  : $deep-cerulean,
+    "twitter"   : $cerulean,
+    "instagram" : $cerise,
 );
 
 

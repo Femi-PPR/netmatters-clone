@@ -108,3 +108,15 @@
     }
 }
 
+@each $social, $icon in $socials-icons{
+    @if $social == "linkedin"{
+        .fa-#{$social}{
+            @include icon($icon, $white, $fsize: 26px);
+        }
+    }
+    @else{
+        .icon-#{$social}{
+            @include icon($icon, $white, $fsize: 26px);
+        }
+    }
+}

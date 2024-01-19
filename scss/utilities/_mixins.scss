@@ -84,3 +84,7 @@
     padding-top: $value;
     padding-bottom: $value;
 }
+
+@mixin flex-columns($n, $gap: 0px){
+    flex: 1 calc((100% - #{$gap} * (#{$n} - 1)) / #{$n});
+}

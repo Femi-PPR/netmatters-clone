@@ -110,6 +110,16 @@
     }
 }
 
+@each $social, $colour in $socials-colours{
+    .btn-#{$social}{
+        background-color: $colour-btn-social;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px 16px;
+        border-radius: 0;
+    }
+}
+
 .dots{
     @include abs-pos($r: 0, $b: (22.85px - 11px) / 2 + 44px, $l: 0);
     display: flex;

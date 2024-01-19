@@ -1,7 +1,9 @@
 .footer-main{
+    padding-top: 27px;
     background-color: $colour-footer-bg;
     h4{
         margin-bottom: 26px;
+        line-height: 17.6px;
     }
 }
 
@@ -15,5 +17,51 @@
 
     strong{
         display: block;
+    }
+}
+
+.socials{
+    display: flex;
+    width: 230px;
+    margin-right: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+
+    .btn{
+        @include flex-columns(2, 10px);
+    }
+
+    @include mq("sm"){
+        width: 300px;
+        margin-right: 20px;
+        flex-wrap: nowrap;
+
+        .btn{
+            @include flex-columns(4, 10px);
+        }
+
+    }
+
+   
+}
+
+.info-footer{
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.footer-bottom{
+    background-color: $colour-footer-bg-drkr;
+    padding-top: 10px;
+}
+
+.p-footer{
+    margin-bottom: 0;
+    color: $white;
+
+    span:last-of-type::before{
+        content: "- ";
     }
 }

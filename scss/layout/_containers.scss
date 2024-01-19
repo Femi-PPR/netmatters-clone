@@ -179,7 +179,7 @@
     height: 550px;
     position: relative;
     background-color: rgba(black, 0.5);
-    background-image: url('/img/backgrounds/cyber-security.webp');
+    background-image: url('#{$img-path-local}/backgrounds/cyber-security.webp');
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
@@ -201,7 +201,7 @@
     align-items: center;
     text-align: center;
     height: 100%;
-    width: 100%;
+    // width: 100%;
 
     @include mq("lg"){
         align-items: start;
@@ -225,4 +225,8 @@
 
 .newsletter{
     background-color: $colour-newsletters-bg;
+}
+
+.news{
+    @include py(50px);
 }

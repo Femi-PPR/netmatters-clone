@@ -1,0 +1,100 @@
+.nav{
+    &-footer{
+        padding-left: 0;
+        li{
+            list-style: none;
+            font-size: .8125rem;
+            line-height: 1.375rem; 
+        }
+        a{
+            color: white;
+        }
+        
+    }
+}
+
+.navs-header{
+    @include mx(-15px);
+    background-color: $colour-primary;
+    @include hidden;
+
+    ul{
+        display: flex;
+        padding: 0;
+
+    }
+
+    li{
+        list-style: none;
+        @include flex-columns(7);
+        
+    }
+
+    @include mq("lg"){
+        display: block;
+    }
+
+    .submenu{
+        @include hidden;
+    }
+}
+
+.nav-link{
+    text-align: center;
+    color: $white;
+    position: relative;
+    display: block;
+    padding: 19px 0 18px;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 1;
+
+    @each $service, $colour in $services-colours{
+        @if $service == "developer-training"{
+            .mdi-#{$service}::before{
+                color: $colour;
+                font-size: 1.438rem;
+                
+            }
+        }
+        @else{ 
+            .icon-#{$service}::before{
+                color: $colour;
+                font-size: 1.438rem;
+            }
+        }
+
+    }
+
+    i{
+        
+        padding-bottom: 10px;
+    }
+
+    small{
+        display: block;
+        font-size: .625rem;
+        padding-bottom: 1px;
+    }
+}
+
+.navs-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 30px;
+
+    @include mq("md"){
+        flex-direction: row;
+        flex-wrap: wrap;
+        nav{
+            @include flex-columns(2, 30px);
+        }
+    }
+
+    @include mq("lg"){
+        nav{
+            @include flex-columns(4, 30px);
+        }
+    }
+}

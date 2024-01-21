@@ -109,14 +109,32 @@
     &-items{
         display: flex;
         flex-wrap: wrap;
-        gap: 15px 0;
-        margin-top: 15px;
+        gap: 15px .938rem;
+        align-items: center;
+        padding-right: calc(10px + .938rem);
+        margin-top: calc(15px + 4px);
     }
 
     &-item{
-        @include flex-columns(3);
+        @include flex-columns(3, .938rem);
         font-size: 1.2rem;
         line-height: 1.313rem;
+        
+        @include py(10px);
+    }
+
+    &-link{
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        line-height: 1.313rem;
+
+
+        i{
+            margin-right: 10px;
+            min-width: 25px;
+        }
+        
     }
 }
 
@@ -127,7 +145,6 @@
 
 .title-submenu{
     display: inline-block;
-    // margin: 15px 0 10px;
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 2rem;

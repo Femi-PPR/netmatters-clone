@@ -7,29 +7,82 @@ button:hover{
 }
 
 .card {
+    &:hover{
+        
+        top: -10px;
+        @include base-transition;
+
+        a{
+            color: $white;
+        }
+    }
+
     a:hover{
         text-decoration: none;
     }
+
+    @each $service, $colour in $services-colours{
+        &-#{$service}:hover{
+            background-color: $colour;
+            .wrapper{
+                background-color: $white;
+                i::before{
+                    color: $colour;
+                }
+            }
+
+            .btn{
+                background-color: $white;
+                color: $colour;
+            }
+        }
+    }
 }
 
+.article-news:hover{
+    top: -10px;
+    @include base-transition;
+}
+
+
+
 .btn{
+    &:hover{
+        background-color: #22242e;
+        border-color: #191a22;
+    }
+
     &-prim:hover{
-        background-color: darken($colour-btn-dark, 5%);
+        background-color: #121318;
         text-decoration: none;
     }
     &-google:hover{
-        background-color: darken(map-get($btn-colours, "google"), 5%);
+        background-color: #166af4;
     }
     &-trustpilot:hover{
-        background-color: darken(map-get($btn-colours, "trustpilot"), 5%);
+        background-color: #009b69;
     }
 
     &-carousel:hover{
+        background-color: #e80a42;
+        border-color: #d4093c;
         text-decoration: none;
     }
 
     &-header:hover{
         text-decoration: none;
+    }
+
+    @each $social, $colour in $socials-colours{
+        &-#{$social}:hover{
+            background-color: $colour;
+        }
+    }
+
+    &-case-study:hover{
+        text-decoration: none;
+        background-color: #2a6ec6;
+        border-color: #2665b5;
     }
     
 }
@@ -39,8 +92,13 @@ button:hover{
 }
 
 .nav-item-header:hover{
-    i::before{
+
+    .i-nav::before{
         color: $white;
+    }
+
+    i{
+        text-decoration: none;
     }
 
     .submenu{
@@ -53,6 +111,24 @@ button:hover{
 
     .submenu-link{
         color: $white;
+    }
+}
+
+.submenu-link:hover{
+    text-decoration: none;
+
+    span{
+        text-decoration: underline;
+    }
+}
+
+.owl-item:hover{
+    img{
+        filter: grayscale(0);
+    }
+
+    .owl-description{
+        display: block;
     }
 }
 

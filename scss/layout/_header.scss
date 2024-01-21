@@ -15,7 +15,7 @@
 
 
 .row{
-    @include mx(-15px);
+    margin-left: -15px;
     display: flex;
     justify-content: flex-start;
     gap: 20px;

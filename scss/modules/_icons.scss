@@ -24,7 +24,6 @@
 
 [class*=" mdi-"],[class^=mdi-] {
     font-family: $font-mdi;
-    speak: none;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
@@ -123,6 +122,7 @@
 
 @each $submenu, $icon in $submenu-icons{
     .#{$submenu}{
-        @include icon($icon);
+        @include icon($icon, $white);
     }
+
 }

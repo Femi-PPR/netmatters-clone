@@ -27,3 +27,9 @@
     color: map-get($search-header-colours, "input-colour");
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+%btm-link{
+    @include hide-at-viewport("md");
+    text-align: center;
+    line-height: 1.1;
+}

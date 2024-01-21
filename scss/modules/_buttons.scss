@@ -61,7 +61,7 @@
         border-radius: 0 3px 3px 0;
         border: none;
         vertical-align: bottom;
-        background-color: #999aa2;
+        // background-color: #999aa2;
         color: #fff;
 
         @include mq-range("lg", "x-lg"){
@@ -77,6 +77,12 @@
         line-height: 47px;
         font-size: 20px;
         outline: none;
+    }
+
+    @each $social, $colour in $socials-colours{
+        &-#{$social}{
+            border: none;
+        }
     }
 
     @each $btn, $colour in $btn-colours{
@@ -98,7 +104,6 @@
     }
 
     &-case-study{
-        background-color: $colour-btn-case-study;
         font-size: 16px;
     }
 }

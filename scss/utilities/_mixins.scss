@@ -65,6 +65,22 @@
     }
 }
 
+@mixin hide-at-viewport($brk, $disp: block){
+    display: $disp;
+
+    @include mq($brk){
+        display: none;
+    }
+}
+
+@mixin show-at-viewport($brk, $disp: block){
+    display: none;
+
+    @include mq($brk){
+        display: $disp;
+    }
+}
+
 @mixin mx($value){
     margin-right: $value;
     margin-left: $value;

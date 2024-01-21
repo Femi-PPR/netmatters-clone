@@ -35,6 +35,10 @@ button:hover{
                 background-color: $white;
                 color: $colour;
             }
+
+            .btn:hover{
+                border-color: $white;
+            }
         }
     }
 }
@@ -81,8 +85,20 @@ button:hover{
 
     &-case-study:hover{
         text-decoration: none;
+    }
+// #191a22
+    &-support:hover{
         background-color: #2a6ec6;
         border-color: #2665b5;
+    }
+
+    &-contact:hover{
+        background-color: #84858f;
+        border-color: #797a85;
+    }
+
+    &-search-header:hover{
+        background-color: #7e808a;
     }
     
 }
@@ -154,8 +170,21 @@ button:hover{
                     border-style: solid;
                     border-width: 35px 68px 0;
                     border-color: $colour transparent transparent;
+
+                    @include mq("x-lg"){
+                        border-width: 35px 83.5px 0;
+                    }
                 }
             }
+        }
+    }
+}
+
+.box{
+    @each $service, $colour in $services-colours-hover{
+        .btn-#{$service}:hover{
+            background-color: map-get($colour, "bg");
+            border-color: map-get($colour, "border");
         }
     }
 }

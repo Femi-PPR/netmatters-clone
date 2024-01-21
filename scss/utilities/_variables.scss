@@ -134,6 +134,14 @@ $services-colours: (
     "developer-training": $punch,
 );
 
+$services-colours-hover: (
+    "bespoke-software"  : ("bg" : #566c88, "border": #4e627b),
+    "it-support"        : ("bg" : #2a6ec6, "border": #2665b5),
+    "digital-marketing" : ("bg" : #26ab5f, "border": #239a55),
+    "web-design"        : ("bg" : #7e57a0, "border": #735093),
+);
+
+
 
 // ---------ICONS----------------
 $icon-star              : "\F005";

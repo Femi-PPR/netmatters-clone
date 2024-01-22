@@ -117,7 +117,7 @@
     &-newsletter{
         visibility: hidden;
 
-        &:checked::before{
+        &:checked + i::before{
             visibility: visible;
         }
     }

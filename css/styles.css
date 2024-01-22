@@ -236,6 +236,10 @@ article {
 .cards-services {
   display: grid;
   gap: 30px; }
+  @media screen and (min-width: 768px) {
+    .cards-services {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "bespoke-software bespoke-software" "it-support it-support" "digital-marketing digital-marketing" "telecoms-services web-design" "cyber-security developer-training"; } }
   @media screen and (min-width: 992px) {
     .cards-services {
       grid-template-columns: repeat(6, 1fr);
@@ -245,7 +249,7 @@ article {
       grid-template-columns: repeat(12, 1fr);
       grid-template-areas: "bespoke-software bespoke-software bespoke-software bespoke-software it-support it-support it-support it-support digital-marketing digital-marketing digital-marketing digital-marketing" "telecoms-services telecoms-services telecoms-services web-design web-design web-design cyber-security cyber-security cyber-security developer-training developer-training developer-training"; } }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-bespoke-software {
     grid-area: bespoke-software; } }
 
@@ -259,7 +263,7 @@ article {
   background: #67809f;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-it-support {
     grid-area: it-support; } }
 
@@ -273,7 +277,7 @@ article {
   background: #4183d7;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-digital-marketing {
     grid-area: digital-marketing; } }
 
@@ -287,7 +291,7 @@ article {
   background: #2ecc71;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-telecoms-services {
     grid-area: telecoms-services; } }
 
@@ -301,7 +305,7 @@ article {
   background: #d64541;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-web-design {
     grid-area: web-design; } }
 
@@ -315,7 +319,7 @@ article {
   background: #926fb1;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-cyber-security {
     grid-area: cyber-security; } }
 
@@ -329,7 +333,7 @@ article {
   background: #f62459;
   margin-bottom: 17px; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .card-developer-training {
     grid-area: developer-training; } }
 
@@ -1135,18 +1139,20 @@ h1, h2, h3 {
     color: orange;
     font-size: 50px; }
 
-.mdi-checked::before {
-  content: "";
-  color: #fff;
-  font-size: 22px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #333645;
-  line-height: 26px;
-  text-align: center; }
+.mdi-checked {
+  visibility: hidden; }
+  .mdi-checked::before {
+    content: "";
+    color: #fff;
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333645;
+    line-height: 26px;
+    text-align: center; }
 
 .icon-bespoke-software::before {
   content: "";
@@ -1472,7 +1478,7 @@ h1, h2, h3 {
   justify-content: center; }
 .checkbox-newsletter {
   visibility: hidden; }
-  .checkbox-newsletter:checked::before {
+  .checkbox-newsletter:checked + i::before {
     visibility: visible; }
 .checkbox-text {
   display: inline-block;
@@ -1789,5 +1795,9 @@ input:focus {
   border-color: #5bc0de;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 192, 222, 0.6); }
+
+.form-mobile input:focus {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
 
 /*# sourceMappingURL=styles.css.map */

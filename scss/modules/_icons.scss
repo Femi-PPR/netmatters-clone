@@ -85,6 +85,8 @@
 }
 
 .mdi-checked{
+    visibility: hidden;
+
     @include icon($icon-checked, $white, 22px){
         @include abs-pos(0,0,0,0);
         background-color: $colour-primary;

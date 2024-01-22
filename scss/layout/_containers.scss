@@ -140,6 +140,16 @@
     display: grid;
     gap: 30px;
 
+    @include mq("md"){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "bespoke-software bespoke-software"
+        "it-support it-support"
+        "digital-marketing digital-marketing"
+        "telecoms-services web-design"
+        "cyber-security developer-training";
+    }
+
     @include mq("lg"){
         grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
@@ -161,7 +171,7 @@
 
 @each $service, $colour in $services-colours{
     .card-#{$service}{
-        @include mq("lg"){
+        @include mq("md"){
             grid-area: #{$service};
         }
     }

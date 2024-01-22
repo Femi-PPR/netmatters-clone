@@ -253,7 +253,9 @@
 }
 
 .link-article{
+    display: inline-block;
     @include abs-pos(0, 0, 0, 0);
+    z-index: 1;
 }
 
 .newsletter{
@@ -343,4 +345,8 @@
     @include mq("md"){
         padding-bottom: 50px;
     }
+}
+
+.partners{
+    @include py(50px);
 }

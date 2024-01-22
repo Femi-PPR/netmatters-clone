@@ -97,6 +97,8 @@
 .checkbox{
     &-label{
         cursor: pointer;
+        display: flex;
+        margin-bottom:  (111.5px + 15px) - 96px;
     }
 
     &-border{
@@ -130,10 +132,10 @@
     }
 }
 
-.wrapper-checkbox{
-    display: flex;
-    margin-bottom:  (111.5px + 15px) - 96px;
-}
+// .wrapper-checkbox{
+//     display: flex;
+//     margin-bottom:  (111.5px + 15px) - 96px;
+// }
 
 .privacy-policy{
     text-decoration: underline;

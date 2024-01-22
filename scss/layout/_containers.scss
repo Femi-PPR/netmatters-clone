@@ -88,7 +88,7 @@
 }
 
 .client{
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .top-link{
@@ -113,21 +113,8 @@
 }
 
 
+//2374.09 - ((291.88 + 30)*7 + 47.523 + 15 - 13))
 
-
-// .link-services{
-
-//     &-top{
-//         @include show-at-viewport("md");
-//     }
-
-//     &-btm{
-//         @include hide-at-viewport("md");
-//         margin: 50px auto 0;
-//         text-align: center;
-//         line-height: 1.1;
-//     }
-// }
 
 .card{
     border: 1px solid $colour-card-border;
@@ -193,9 +180,15 @@
     padding: 0;
     height: 550px;
     position: relative;
-    background-color: rgba(black, 0.5);
-    background-image: url('#{$img-path-local}/backgrounds/cyber-security.webp');
+    z-index: -2;
+    // background-color: rgba(black, 1);
+    // background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
+
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/cyber-security.webp);
     background-blend-mode: multiply;
+
+    // background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     h1{
@@ -207,6 +200,23 @@
     a{
         margin-bottom: 1.125rem;
     }
+
+    @include mq("lg"){
+        background-color: rgba(black, 1);
+        background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
+        background-size: cover;
+        background-position: center;
+
+        &::before{
+            content: "";
+            z-index: -1;
+            @include abs-pos(0,0,0,0);
+            background: linear-gradient(270deg,transparent 25%,#000);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
 }
 
 .container-carousel{

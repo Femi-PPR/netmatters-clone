@@ -45,6 +45,30 @@
         padding: 0 10px; 
     }
 
+    &-chat{
+        position: fixed;
+        padding: 0;
+        right: 25px;
+        bottom: 25px;
+        z-index: 99;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+        @include circle-icon(60px, $colour-primary);
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            width: 80%;
+            padding: 11px;
+            fill: white;
+
+            rect{
+                fill: $colour-primary;
+            }
+        }
+    }
+  
     &-hamburger{
         @include no-border;
         display: flex;
@@ -111,9 +135,9 @@
 .btns{
     display: inline-flex;
     flex-flow: row wrap;
-    gap: 17px 8px;
+    gap: 17px 9.5px;
     &-quote{
-        gap: 20px 8px;
+        gap: 20px 12.5px;
     }
 }
 

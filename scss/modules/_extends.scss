@@ -33,3 +33,13 @@
     text-align: center;
     line-height: 1.1;
 }
+
+%heading{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    
+    h2{
+        margin-right: auto;
+    }
+}

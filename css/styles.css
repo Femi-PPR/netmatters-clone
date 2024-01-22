@@ -70,13 +70,10 @@ article {
   transition: .5s ease;
   position: relative; }
 
-.heading {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 40px; }
-  .heading h2 {
-    margin-right: auto; }
+.heading-services {
+  align-items: end; }
+.heading-news {
+  align-items: start; }
 
 .header-top {
   padding: 20px 0; }
@@ -90,13 +87,34 @@ article {
   height: 70px; }
   .row .logo-header {
     margin-right: auto;
-    padding-right: 15px;
     padding-left: 15px;
-    width: 41.6666666667%; }
+    display: block;
+    max-height: 100%;
+    width: 100%; }
+    @media screen and (min-width: 768px) {
+      .row .logo-header {
+        padding-right: 15px;
+        width: calc((100% + 15px) / 2); } }
+    @media screen and (min-width: 992px) {
+      .row .logo-header {
+        width: calc((100% + 15px) * 5 / 12); } }
+    @media screen and (min-width: 1260px) {
+      .row .logo-header {
+        width: calc((100% + 15px) / 3); } }
+    .row .logo-header .logo-inner {
+      display: flex;
+      height: 100%;
+      justify-content: left; }
+    .row .logo-header img {
+      object-fit: contain;
+      object-position: left;
+      aspect-ratio: auto; }
 
-@media screen and (min-width: 768px) {
-  .link-mobile {
-    display: none; } }
+.link-mobile {
+  margin-left: -5px; }
+  @media screen and (min-width: 768px) {
+    .link-mobile {
+      display: none; } }
 
 .header-article {
   position: relative;
@@ -180,7 +198,7 @@ article {
   margin-bottom: 25px; }
 
 .client {
-  margin-bottom: 45px; }
+  margin-bottom: 50px; }
 
 .top-link {
   display: none; }
@@ -329,8 +347,9 @@ article {
   padding: 0;
   height: 550px;
   position: relative;
+  z-index: -2;
   background-color: rgba(0, 0, 0, 0.5);
-  background-image: url("../img/backgrounds/cyber-security.webp");
+  background-image: url(../img/backgrounds/cyber-security.webp);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center; }
@@ -340,6 +359,23 @@ article {
     margin-bottom: 2.313rem; }
   .carousel a {
     margin-bottom: 1.125rem; }
+  @media screen and (min-width: 992px) {
+    .carousel {
+      background-color: black;
+      background: url("../img/backgrounds/cyber-security.webp");
+      background-size: cover;
+      background-position: center; }
+      .carousel::before {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(270deg, transparent 25%, #000);
+        background-size: cover;
+        background-position: center; } }
 
 .container-carousel {
   display: flex;
@@ -437,6 +473,9 @@ article {
 .footer-main {
   padding-top: 27px;
   background-color: #323544; }
+  @media screen and (min-width: 1260px) {
+    .footer-main {
+      padding-top: 47px; } }
   .footer-main h4 {
     margin-bottom: 26px;
     line-height: 17.6px; }
@@ -453,24 +492,28 @@ article {
 
 .socials {
   display: flex;
-  width: 230px;
-  margin-right: 20px;
+  width: 234px;
   gap: 10px;
   flex-wrap: wrap; }
   .socials .btn {
     flex: 1 calc((100% - 10px * (2 - 1)) / 2); }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 481px) {
     .socials {
       width: 300px;
-      margin-right: 20px;
       flex-wrap: nowrap; }
       .socials .btn {
-        flex: 1 calc((100% - 10px * (4 - 1)) / 4); } }
+        flex: 0; } }
+  @media screen and (min-width: 1260px) {
+    .socials {
+      gap: 7px; } }
 
 .info-footer {
   display: inline-block;
   padding-bottom: 15px;
   margin-bottom: 30px; }
+  @media screen and (min-width: 768px) {
+    .info-footer {
+      padding-bottom: 10px; } }
 
 .footer-bottom {
   background-color: #212330;
@@ -481,6 +524,14 @@ article {
   color: #fff; }
   .p-footer span:last-of-type::before {
     content: "- "; }
+
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px 80px; }
+  @media screen and (min-width: 1260px) {
+    .container-footer {
+      flex-direction: row; } }
 
 .branding-title {
   margin: -6px 0 40px; }
@@ -651,6 +702,13 @@ h1, h2, h3 {
     .btm-link-services, .btm-link-news {
       display: none; } }
 
+.heading-services, .heading-news {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px; }
+  .heading-services h2, .heading-news h2 {
+    margin-right: auto; }
+
 .btn {
   text-transform: uppercase;
   display: inline-flex;
@@ -690,6 +748,27 @@ h1, h2, h3 {
     border-width: 1px 1px 0 0;
     border-radius: 0 10px 0 0;
     padding: 0 10px; }
+  .btn-chat {
+    position: fixed;
+    padding: 0;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #333645;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .btn-chat svg {
+      width: 80%;
+      padding: 11px;
+      fill: white; }
+      .btn-chat svg rect {
+        fill: #333645; }
   .btn-hamburger {
     border: none;
     display: flex;
@@ -749,9 +828,9 @@ h1, h2, h3 {
 .btns {
   display: inline-flex;
   flex-flow: row wrap;
-  gap: 17px 8px; }
+  gap: 17px 9.5px; }
   .btns-quote {
-    gap: 20px 8px; }
+    gap: 20px 12.5px; }
 
 .btn-bespoke-software {
   background-color: #67809f; }
@@ -938,6 +1017,11 @@ h1, h2, h3 {
   @media screen and (min-width: 992px) {
     .navs-footer nav {
       flex: 1 calc((100% - 30px * (4 - 1)) / 4); } }
+  @media screen and (min-width: 1260px) {
+    .navs-footer {
+      padding-bottom: 40px; }
+      .navs-footer nav {
+        width: 170px; } }
 
 .submenu {
   padding-top: 50px;
@@ -1093,25 +1177,33 @@ h1, h2, h3 {
   color: #fff;
   font-size: 2rem; }
 
-.icon-facebook::before {
-  content: "";
-  color: #fff;
-  font-size: 26px; }
+.icon-facebook {
+  padding-top: 2.5px; }
+  .icon-facebook::before {
+    content: "";
+    color: #fff;
+    font-size: 26px; }
 
-.fa-linkedin::before {
-  content: "";
-  color: #fff;
-  font-size: 26px; }
+.fa-linkedin {
+  padding-top: 2.5px; }
+  .fa-linkedin::before {
+    content: "";
+    color: #fff;
+    font-size: 26px; }
 
-.icon-twitter::before {
-  content: "";
-  color: #fff;
-  font-size: 26px; }
+.icon-twitter {
+  padding-top: 2.5px; }
+  .icon-twitter::before {
+    content: "";
+    color: #fff;
+    font-size: 26px; }
 
-.icon-instagram::before {
-  content: "";
-  color: #fff;
-  font-size: 26px; }
+.icon-instagram {
+  padding-top: 2.5px; }
+  .icon-instagram::before {
+    content: "";
+    color: #fff;
+    font-size: 26px; }
 
 .fa-cogs::before {
   content: "";
@@ -1679,5 +1771,10 @@ button:hover {
 .box .btn-web-design:hover {
   background-color: #7e57a0;
   border-color: #735093; }
+
+input:focus {
+  border-color: #5bc0de;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 192, 222, 0.6); }
 
 /*# sourceMappingURL=styles.css.map */

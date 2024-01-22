@@ -1,6 +1,11 @@
 .footer-main{
     padding-top: 27px;
     background-color: $colour-footer-bg;
+
+    @include mq("x-lg"){
+        padding-top: 47px;
+    }
+
     h4{
         margin-bottom: 26px;
         line-height: 17.6px;
@@ -22,8 +27,8 @@
 
 .socials{
     display: flex;
-    width: 230px;
-    margin-right: 20px;
+    width: 234px;
+    // margin-right: 16px;
     gap: 10px;
     flex-wrap: wrap;
     
@@ -32,15 +37,19 @@
         @include flex-columns(2, 10px);
     }
 
-    @include mq("sm"){
+    @include mq("sm-btn"){
         width: 300px;
-        margin-right: 20px;
+        // margin-right: 20px;
         flex-wrap: nowrap;
 
         .btn{
-            @include flex-columns(4, 10px);
+            // @include flex-columns(4, 7px);
+            flex: 0;
         }
+    }
 
+    @include mq("x-lg"){
+        gap: 7px;
     }
 
    
@@ -50,6 +59,10 @@
     display: inline-block;
     padding-bottom: 15px;
     margin-bottom: 30px;
+
+    @include mq("md"){
+        padding-bottom: 10px;
+    }
 }
 
 .footer-bottom{
@@ -66,7 +79,12 @@
     }
 }
 
-@debug #166af4;
-@debug darken(map-get($btn-colours, "google"), 9.2%);
-@debug #009b69;
-@debug darken(map-get($btn-colours, "trustpilot"), 5.3%);
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 0px 80px;
+
+    @include mq("x-lg"){
+        flex-direction: row;
+    }
+}

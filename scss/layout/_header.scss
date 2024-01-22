@@ -1,12 +1,22 @@
 .heading{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 40px;
-    
-    h2{
-        margin-right: auto;
+    &-services{
+        @extend %heading;
+        align-items: end;
     }
+
+    &-news{
+        @extend %heading;
+        align-items: start;
+    }
+
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: end;
+    // margin-bottom: 40px;
+    
+    // h2{
+    //     margin-right: auto;
+    // }
 }
 
 .header-top{
@@ -24,13 +34,42 @@
 
     .logo-header{
         margin-right: auto;
-        @include px(15px);
-        width: percentage(5/12);
+        padding-left: 15px;
+        display: block;
+        max-height: 100%;
+
+        width: 100%;
+
+        @include mq("md"){
+            padding-right: 15px;
+            width: calc((100% + 15px) / 2);
+        }
+
+        @include mq("lg"){
+            width: calc((100% + 15px) * 5 / 12);
+        }
+
+        @include mq("x-lg"){
+            width: calc((100% + 15px) / 3);
+        }
+
+        .logo-inner{
+            display: flex;
+            height: 100%;
+            justify-content: left;
+        }
+
+        img{
+            object-fit: contain;
+            object-position: left;
+            aspect-ratio: auto;
+        }
     }
 }
 
 
 .link-mobile{
+    margin-left: -5px;
     @include mq("md"){
         @include hidden;
     }

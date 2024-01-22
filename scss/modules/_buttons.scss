@@ -161,12 +161,21 @@
     @include abs-pos($r: 0, $b: (22.85px - 11px) / 2 + 44px, $l: 0);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    // gap: 20px;
+    z-index: 1;
 }
 
 .dot{
+    display: block;
     @include circle-icon(11px, rgba($white, 0.5));
     position: relative;
+    
+    &-wrapper{
+        padding: 0 10px;
+        display: inline-block;
+        // cursor: pointer;
+        user-select: none;
+    }
 
     &-active{
         background-color: $white;

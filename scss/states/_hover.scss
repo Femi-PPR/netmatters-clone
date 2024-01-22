@@ -189,3 +189,15 @@ button:hover{
     }
 }
 
+.dot-wrapper:hover{
+    cursor: pointer;
+
+    .dot{
+        background-color: #869791;
+
+        &-active{
+            background-color: $white;
+        }
+    }
+}
+

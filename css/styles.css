@@ -347,7 +347,6 @@ article {
   padding: 0;
   height: 550px;
   position: relative;
-  z-index: -2;
   background-color: rgba(0, 0, 0, 0.5);
   background-image: url(../img/backgrounds/cyber-security.webp);
   background-blend-mode: multiply;
@@ -367,7 +366,7 @@ article {
       background-position: center; }
       .carousel::before {
         content: "";
-        z-index: -1;
+        z-index: 0;
         position: absolute;
         top: 0;
         right: 0;
@@ -383,6 +382,8 @@ article {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
   height: 100%; }
   @media screen and (min-width: 992px) {
     .container-carousel {
@@ -888,14 +889,19 @@ h1, h2, h3 {
   left: 0;
   display: flex;
   justify-content: center;
-  gap: 20px; }
+  z-index: 1; }
 
 .dot {
+  display: block;
   border-radius: 50%;
   width: 11px;
   height: 11px;
   background: rgba(255, 255, 255, 0.5);
   position: relative; }
+  .dot-wrapper {
+    padding: 0 10px;
+    display: inline-block;
+    user-select: none; }
   .dot-active {
     background-color: #fff; }
     .dot-active::after {
@@ -1771,6 +1777,13 @@ button:hover {
 .box .btn-web-design:hover {
   background-color: #7e57a0;
   border-color: #735093; }
+
+.dot-wrapper:hover {
+  cursor: pointer; }
+  .dot-wrapper:hover .dot {
+    background-color: #869791; }
+    .dot-wrapper:hover .dot-active {
+      background-color: #fff; }
 
 input:focus {
   border-color: #5bc0de;

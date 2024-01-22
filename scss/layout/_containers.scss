@@ -180,7 +180,7 @@
     padding: 0;
     height: 550px;
     position: relative;
-    z-index: -2;
+    // z-index: -2;
 
     background-color: rgba(0, 0, 0, 0.5);
     background-image: url(../img/backgrounds/cyber-security.webp);
@@ -206,7 +206,7 @@
 
         &::before{
             content: "";
-            z-index: -1;
+            z-index: 0;
             @include abs-pos(0,0,0,0);
             background: linear-gradient(270deg,transparent 25%,#000);
             background-size: cover;
@@ -222,6 +222,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+    z-index: 1;
     height: 100%;
 
     @include mq("lg"){

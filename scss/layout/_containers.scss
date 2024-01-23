@@ -103,7 +103,6 @@
     &-services{
         @extend %btm-link;
         @include abs-pos($b:-5px,$l:0, $r:0);
-        // transform: translateX(-50%);
     }
 
     &-news{
@@ -113,7 +112,6 @@
 }
 
 
-//2374.09 - ((291.88 + 30)*7 + 47.523 + 15 - 13))
 
 
 .card{
@@ -190,9 +188,8 @@
     padding: 0;
     height: 550px;
     position: relative;
-    // z-index: -2;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba($colour-carousel-bg, 0.5);
     background-image: url(../img/backgrounds/cyber-security.webp);
     background-blend-mode: multiply;
 
@@ -209,7 +206,7 @@
     }
 
     @include mq("lg"){
-        background-color: rgba(black, 1);
+        background-color: $colour-carousel-bg;
         background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
         background-size: cover;
         background-position: center;
@@ -218,7 +215,7 @@
             content: "";
             z-index: 0;
             @include abs-pos(0,0,0,0);
-            background: linear-gradient(270deg,transparent 25%,#000);
+            background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
             background-size: cover;
             background-position: center;
         }
@@ -333,7 +330,7 @@
         content: "";
         margin: auto;
         display: inline-block;
-        border-color: #333645 transparent transparent;
+        border-color: $colour-primary transparent transparent;
         border-style: solid;
         border-width: 35px 36px 0;
     }

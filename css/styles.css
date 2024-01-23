@@ -376,7 +376,7 @@ article {
         right: 0;
         bottom: 0;
         left: 0;
-        background: linear-gradient(270deg, transparent 25%, #000);
+        background: linear-gradient(270deg, transparent 25%, black);
         background-size: cover;
         background-position: center; } }
 
@@ -777,7 +777,7 @@ h1, h2, h3 {
     .btn-chat svg {
       width: 80%;
       padding: 11px;
-      fill: white; }
+      fill: #fff; }
       .btn-chat svg rect {
         fill: #333645; }
   .btn-hamburger {
@@ -1592,6 +1592,8 @@ button:hover {
   top: -10px;
   transition: .5s ease; }
 
+.btn-header:hover {
+  text-decoration: none; }
 .btn:hover {
   background-color: #22242e;
   border-color: #191a22; }
@@ -1602,11 +1604,17 @@ button:hover {
   background-color: #166af4; }
 .btn-trustpilot:hover {
   background-color: #009b69; }
+.btn-support:hover {
+  background-color: #2a6ec6;
+  border-color: #2665b5; }
+.btn-contact:hover {
+  background-color: #84858f;
+  border-color: #797a85; }
+.btn-search-header:hover {
+  background-color: #7e808a; }
 .btn-carousel:hover {
   background-color: #e80a42;
   border-color: #d4093c;
-  text-decoration: none; }
-.btn-header:hover {
   text-decoration: none; }
 .btn-facebook:hover {
   background-color: #3b5998; }
@@ -1618,14 +1626,6 @@ button:hover {
   background-color: #d93175; }
 .btn-case-study:hover {
   text-decoration: none; }
-.btn-support:hover {
-  background-color: #2a6ec6;
-  border-color: #2665b5; }
-.btn-contact:hover {
-  background-color: #84858f;
-  border-color: #797a85; }
-.btn-search-header:hover {
-  background-color: #7e808a; }
 
 .nav-link:hover {
   text-decoration: none; }

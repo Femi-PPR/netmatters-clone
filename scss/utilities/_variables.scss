@@ -101,6 +101,12 @@ $colour-read-time           : rgba($tuna-2, .5);
 $colour-article-text        : $dove-gray;
 $colour-btn-social          : #212330;
 $colour-btn-case-study      : $havelock-blue;
+$colour-carousel-bg         : black;
+$colour-input-border        : $silver;
+$colour-required            : #d24d57;
+$colour-focus-border        : #5bc0de;
+$colour-focus-shadow        : rgba(#5bc0de, 0.6);
+$colour-dot-hover           : #869791;
 
 $btn-colours: (
     "google"        : $dodger-blue,
@@ -108,6 +114,17 @@ $btn-colours: (
     "support"       : $havelock-blue,
     "contact"       : $manatee,
     "search-header" : $manatee,
+);
+
+$btn-colours-hover: (
+    ""              : ("bg" : #22242e, "border": #191a22),
+    "-prim"         : #121318,
+    "-google"       : #166af4,
+    "-trustpilot"   : #009b69,
+    "-support"      : ("bg" : #2a6ec6, "border": #2665b5),
+    "-contact"      : ("bg" : #84858f, "border": #797a85),
+    "-search-header": #7e808a,
+    "-carousel"     : ("bg" : #e80a42, "border": #d4093c),
 );
 
 $search-mobile-colours: (

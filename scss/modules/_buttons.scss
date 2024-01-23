@@ -61,7 +61,7 @@
         svg{
             width: 80%;
             padding: 11px;
-            fill: white;
+            fill:$white;
 
             rect{
                 fill: $colour-primary;
@@ -85,8 +85,7 @@
         border-radius: 0 3px 3px 0;
         border: none;
         vertical-align: bottom;
-        // background-color: #999aa2;
-        color: #fff;
+        color: $white;
 
         @include mq-range("lg", "x-lg"){
             border-radius: 3px;
@@ -161,7 +160,6 @@
     @include abs-pos($r: 0, $b: (22.85px - 11px) / 2 + 44px, $l: 0);
     display: flex;
     justify-content: center;
-    // gap: 20px;
     z-index: 1;
 }
 
@@ -173,7 +171,6 @@
     &-wrapper{
         padding: 0 10px;
         display: inline-block;
-        // cursor: pointer;
         user-select: none;
     }
 

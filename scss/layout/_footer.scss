@@ -28,7 +28,6 @@
 .socials{
     display: flex;
     width: 234px;
-    // margin-right: 16px;
     gap: 10px;
     flex-wrap: wrap;
     
@@ -39,11 +38,9 @@
 
     @include mq("sm-btn"){
         width: 300px;
-        // margin-right: 20px;
         flex-wrap: nowrap;
 
         .btn{
-            // @include flex-columns(4, 7px);
             flex: 0;
         }
     }

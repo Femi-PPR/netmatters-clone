@@ -113,14 +113,12 @@
     @if $social == "linkedin"{
         .fa-#{$social}{
             @include icon($icon, $white, $fsize: 26px);
-            // @include py(1.25px);
             padding-top: 2.5px;
         }
     }
     @else{
         .icon-#{$social}{
             @include icon($icon, $white, $fsize: 26px);
-            // @include py(1.25px);
             padding-top: 2.5px;
         }
     }

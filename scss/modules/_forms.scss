@@ -13,7 +13,7 @@
         border-radius: 0;
         width: 174px;
         @extend %input-styles;
-        border-color: #ccc;
+        border-color: $colour-input-border;
         font-size: 14px;
 
 
@@ -82,7 +82,7 @@
 
         &.required::after{
             content: " *";
-            color: #d24d57;
+            color: $colour-required;
         }
     }
 
@@ -90,7 +90,7 @@
         width: 100%;
         @extend %input-styles;
         height: 47px;
-        border-color: #ccc;
+        border-color: $colour-input-border;
     }
 }
 
@@ -131,11 +131,6 @@
         font-weight: $font-weight-bold;
     }
 }
-
-// .wrapper-checkbox{
-//     display: flex;
-//     margin-bottom:  (111.5px + 15px) - 96px;
-// }
 
 .privacy-policy{
     text-decoration: underline;

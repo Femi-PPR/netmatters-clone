@@ -229,18 +229,40 @@
         @include hamburger-slice;
         top: 50%;
         margin-top: -1.5px;
+        transition-duration: .22s;
+        transition-timing-function: cubic-bezier(.55,.055,.675,.19);
 
         &::before{
             content: '';
             top: -10px;
+            opacity: 1;
             @include hamburger-slice;
-
+            transition: top .1s ease-in .25s,opacity .1s ease-in;
         }
 
         &::after{
             content: '';
             bottom: -10px;
             @include hamburger-slice;
+            transition: bottom .1s ease-in .25s,transform .22s cubic-bezier(.55,.055,.675,.19);
+        }
+
+        &.sidebar-active{
+            transform: rotate(225deg);
+            transition-delay: .12s;
+            transition-timing-function: cubic-bezier(.215,.61,.355,1);
+
+            &::before{
+                top: 0;
+                opacity: 0;
+                transition: top .1s ease-out,opacity .1s ease-out .12s;
+            }
+
+            &::after{
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition: bottom .1s ease-out,transform .22s cubic-bezier(.215,.61,.355,1) .12s;
+            }
         }
     }
    

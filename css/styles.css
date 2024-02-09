@@ -83,9 +83,15 @@ article {
   position: fixed;
   top: -100%;
   z-index: 9;
-  left: 0;
+  right: 0;
   width: 100%;
-  background-color: white; }
+  background-color: white;
+  transition: right .5s; }
+  .header-sticky.sidebar-active {
+    right: 275px; }
+    @media screen and (min-width: 992px) {
+      .header-sticky.sidebar-active {
+        right: 350px; } }
 
 .row {
   margin-left: -15px;
@@ -739,10 +745,14 @@ article {
 .cookie-modal {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   border-radius: 5px; }
   @media screen and (min-width: 768px) {
     .cookie-modal {
       width: 600px; } }
+
+.no-show .cookie-wrapper {
+  display: none; }
 
 .modal-content {
   padding: 20px;
@@ -760,6 +770,35 @@ article {
   @media screen and (min-width: 992px) {
     .sidebar {
       width: 350px; } }
+
+.content {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  right: 0;
+  transition: all .5s; }
+  .content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: opacity .5s; }
+  .content.sidebar-active {
+    right: 275px;
+    overflow: hidden;
+    cursor: pointer; }
+    .content.sidebar-active::after {
+      width: 100%;
+      height: 100%;
+      opacity: 1; }
+    @media screen and (min-width: 992px) {
+      .content.sidebar-active {
+        right: 350px; } }
 
 .footer-main {
   padding-top: 27px;
@@ -1253,15 +1292,19 @@ h1, h2, h3 {
   background-color: #fff;
   display: block;
   top: 50%;
-  margin-top: -1.5px; }
+  margin-top: -1.5px;
+  transition-duration: .22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger-inner::before {
     content: '';
     top: -10px;
+    opacity: 1;
     width: 33px;
     height: 4px;
     position: absolute;
     background-color: #fff;
-    display: block; }
+    display: block;
+    transition: top .1s ease-in .25s,opacity .1s ease-in; }
   .hamburger-inner::after {
     content: '';
     bottom: -10px;
@@ -1269,7 +1312,20 @@ h1, h2, h3 {
     height: 4px;
     position: absolute;
     background-color: #fff;
-    display: block; }
+    display: block;
+    transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger-inner.sidebar-active {
+    transform: rotate(225deg);
+    transition-delay: .12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .hamburger-inner.sidebar-active::before {
+      top: 0;
+      opacity: 0;
+      transition: top .1s ease-out,opacity .1s ease-out .12s; }
+    .hamburger-inner.sidebar-active::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s; }
 
 .carousel .btn-technology-company {
   background-color: #926fb1;

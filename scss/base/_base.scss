@@ -8,6 +8,7 @@ body{
     color: $colour-text;
     letter-spacing: .4px;
     margin: 0px;
+    overscroll-behavior-y: none;
 }
 
 button{

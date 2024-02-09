@@ -42,6 +42,14 @@
     left: $l;
 }
 
+@mixin fixed-pos($t: null, $r: null, $b: null, $l: null){
+    position: fixed;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+}
+
 @mixin base-font{
     font-family: $stack-poppins;
 }
@@ -112,4 +120,49 @@
 
 @mixin flex-columns($n, $gap: 0px){
     flex: 1 calc((100% - #{$gap} * (#{$n} - 1)) / #{$n});
+}
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin services-carousel($service, $h: 550px){
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    @include center;
+
+    background-color: rgba($colour-carousel-bg, 0.5);
+    background-image: url(#{$img-path-local}/backgrounds/#{$service}.webp);
+    background-blend-mode: multiply;
+
+    background-size: cover;
+    background-position: center;
+    h1{
+        margin-bottom: 1.25rem;
+    }
+    p{
+        margin-bottom: .375rem + 1.938rem;
+    }
+    a{
+        margin-bottom: 1.125rem;
+    }
+
+    @include mq("lg"){
+        background-color: $colour-carousel-bg;
+        background: url('#{$img-path-local}/backgrounds/#{$service}.webp');
+        background-size: cover;
+        background-position: center;
+
+        &::before{
+            content: "";
+            z-index: 0;
+            @include abs-pos(0,0,0,0);
+            background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
+            background-size: cover;
+            background-position: center;
+        }
+    }
 }

@@ -184,48 +184,66 @@
     
 }
 
-.carousel{
+.banners{
     padding: 0;
-    height: 550px;
+}
+
+.carousel{
+    // padding: 0;
+    // height: 550px;
     position: relative;
 
-    background-color: rgba($colour-carousel-bg, 0.5);
-    background-image: url(../img/backgrounds/cyber-security.webp);
-    background-blend-mode: multiply;
-
-    background-size: cover;
-    background-position: center;
-    h1{
-        margin-bottom: 1.25rem;
-    }
-    p{
-        margin-bottom: .375rem + 1.938rem;
-    }
-    a{
-        margin-bottom: 1.125rem;
-    }
-
-    @include mq("lg"){
-        background-color: $colour-carousel-bg;
-        background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
-        background-size: cover;
-        background-position: center;
-
-        &::before{
-            content: "";
-            z-index: 0;
-            @include abs-pos(0,0,0,0);
-            background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
-            background-size: cover;
-            background-position: center;
+    @each $service, $styles in $carousel-styles{
+        &-#{$service}{
+            @include services-carousel($service);
         }
     }
+
+    .slick-list{
+        padding: 0;
+    }
+    // &-cyber-security{
+    //     @include services-carousel("cyber-security");
+    // }
+
+    // background-color: rgba($colour-carousel-bg, 0.5);
+    // background-image: url(../img/backgrounds/cyber-security.webp);
+    // background-blend-mode: multiply;
+
+    // background-size: cover;
+    // background-position: center;
+    // h1{
+    //     margin-bottom: 1.25rem;
+    // }
+    // p{
+    //     margin-bottom: .375rem + 1.938rem;
+    // }
+    // a{
+    //     margin-bottom: 1.125rem;
+    // }
+
+    // @include mq("lg"){
+    //     background-color: $colour-carousel-bg;
+    //     background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
+    //     background-size: cover;
+    //     background-position: center;
+
+    //     &::before{
+    //         content: "";
+    //         z-index: 0;
+    //         @include abs-pos(0,0,0,0);
+    //         background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
+    //         background-size: cover;
+    //         background-position: center;
+    //     }
+    // }
 
 }
 
 .container-carousel{
     display: flex;
     flex-direction: column;
+    @include py(60px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -262,16 +280,33 @@
 
 .owl-stage{
     display: flex;
-    gap: 90px;
+    // gap: 90px;
     overflow-x: clip;
     height: 70px;
-    padding-left: 20px;
+
+    .slick{
+        &-list{
+            overflow-x: clip;
+            overflow-y: visible;
+            padding-left: 20px;
+        }
+
+        &-track{
+            height: 100%;
+        }
+
+    }
+}
+
+.slick-initialized .slick-slide{
+    display: flex;
 }
 
 .owl-item{
     display: flex;
     position: relative;
     align-items: center;
+    margin-right: 90px;
 
     img{
         filter: grayscale(1);
@@ -320,6 +355,7 @@
     }
 }
 
+
 .arrow{
     position: absolute;
     bottom: 10px;
@@ -346,4 +382,45 @@
 
 .partners{
     @include py(50px);
+}
+
+.cookie{
+    &-wrapper{
+        @include fixed-pos();
+        inset: 0;
+        z-index: 100;
+        background-color: $colour-cookie-wrapper-bg;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-modal{
+        background-color: white;
+        border: 1px solid rgba(black, .2);
+        border-radius: 5px;
+
+        @include mq("md"){
+            width: 600px;
+        }
+    }
+}
+
+.modal-content{
+    padding: 20px;
+    color: map-get($modal-styles, "content-colour");
+}
+
+.sidebar{
+    background-color: $colour-primary;
+    @include fixed-pos($t:0, $r:0);
+    z-index: 9;
+    height: 100%;
+    width: 275px;
+    overflow: auto;
+
+    @include mq("lg"){
+        width: 350px;
+    }
 }

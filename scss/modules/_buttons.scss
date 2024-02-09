@@ -50,7 +50,7 @@
         padding: 0;
         right: 25px;
         bottom: 25px;
-        z-index: 99;
+        z-index: 101;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
         @include circle-icon(60px, $colour-primary);
         border: none;
@@ -129,6 +129,16 @@
     &-case-study{
         font-size: 16px;
     }
+
+    &-settings{
+        background-color: map-get($modal-styles, "btn-settings-bg");
+        border-color: map-get($modal-styles, "btn-settings-bg");
+    }
+
+    &-accept{
+        background-color: map-get($modal-styles, "btn-accept-bg");
+        border-color: map-get($modal-styles, "btn-accept-bg");
+    }
 }
 
 .btns{
@@ -161,6 +171,25 @@
     display: flex;
     justify-content: center;
     z-index: 1;
+
+    li{
+        padding: 0 10px;
+        display: inline-block;
+        user-select: none;
+    }
+
+    .slick-active{
+        .dot{
+            background-color: $white;
+
+            &::after{
+                content: "";
+                @include abs-pos($t: -6px, $l: -6px);
+                @include circle-icon(23px, transparent);
+                border: 2px solid $white;
+            }
+        }
+    }
 }
 
 .dot{
@@ -215,4 +244,18 @@
         }
     }
    
+}
+
+.carousel{
+    @each $service, $styles in $carousel-styles{
+        .btn-#{$service}{
+            background-color: map-get($styles, "colour");
+            border-color: map-get($styles, "colour");
+            padding: 5px 20px;
+            line-height: 50px;
+            i{
+                line-height: 50px;
+            }
+        }
+    }
 }

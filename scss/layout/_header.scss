@@ -18,9 +18,18 @@
     position: fixed;
     top: -100%;
     z-index: 9;
-    left: 0;
+    right: 0;
     width: 100%;
     background-color: white;
+    transition: right .5s;
+
+    &.sidebar-active{
+        right: 275px;
+
+        @include mq("lg"){
+            right: 350px;
+        }
+    }
 }
 
 

@@ -1,22 +1,33 @@
-$contentDiv = $(".content");
+//---------------------------- Variables ----------------------------------
+const $contentDiv = $(".content");
 
+const noScroll = () => {
+    $("body").css({ height: "100%", overflow: "hidden" });
+};
+
+const reScroll = () => {
+    $("body").removeAttr("style");
+};
+
+//---------------------------- Cookie Popup ----------------------------------
 $(document).ready(() => {
     if (!$("html").hasClass("no-show")) {
-        $("body").css({ height: "100%", overflow: "hidden" });
+        noScroll();
     }
 });
 
-$(".btn-accept").on("click", (event) => {
+$(".btn-accept").on("click", () => {
     document.cookie = "dontShowPopup=true;max-age=604800;";
     $(".cookie-wrapper").hide();
-    $("body").removeAttr("style");
+    reScroll();
 });
 
-$(".btn-cookie").on("click", (event) => {
+$(".btn-cookie").on("click", () => {
     $(".cookie-wrapper").css({ display: "flex" });
-    $("body").css({ height: "100%", overflow: "hidden" });
+    noScroll();
 });
 
+//---------------------------- Sliders ----------------------------------
 const carouselSlickOption = {
     arrows: false,
     adaptiveHeight: true,
@@ -43,9 +54,11 @@ const owlSlickOption = {
 
 $(".owl-stage").slick(owlSlickOption);
 
+//---------------------------- Sticky Header ----------------------------------
 const $stickyHeader = $('<div class="header-sticky"></div>').append(
     $(".header-main").clone(true)
 );
+
 let scrollStart = NaN;
 
 function showHideHeader(isSrcollDirectionDown, scrollTop) {
@@ -62,13 +75,10 @@ function showHideHeader(isSrcollDirectionDown, scrollTop) {
     }
 }
 
-$(document).on("scroll", (event) => {
+$(document).on("scroll", () => {
     clearTimeout(window.scrollEndTimer);
     window.scrollEndTimer = setTimeout(() => {
         showHideHeader(scrollStart > $(this).scrollTop(), $(this).scrollTop());
-        // console.log(
-        //     `scrolled ${scrollStart < $(this).scrollTop() ? "up" : "down"}`
-        // );
         scrollStart = NaN;
     }, 100);
     if (Number.isNaN(scrollStart)) {
@@ -76,14 +86,22 @@ $(document).on("scroll", (event) => {
     }
 });
 
-// document.addEventListener("scrollend", () => {
-//     console.log(`end: ${$(this).scrollTop()}`);
-//     console.log(
-//         `scrolled ${scrollStart < $(this).scrollTop() ? "up" : "down"}`
-//     );
-//     scrollStart = NaN;
-//     window.scrollEndTimer =
-// });
+//---------------------------- Sidebar ----------------------------------
+function showSidebar() {
+    $contentDiv
+        .addClass("sidebar-active")
+        .css({ height: "100%", overflow: "hidden" });
+    $stickyHeader.addClass("sidebar-active");
+    $(".hamburger-inner").addClass("sidebar-active");
+    noScroll();
+}
+
+function hideSidebar() {
+    $contentDiv.removeClass("sidebar-active").removeAttr("style");
+    $stickyHeader.removeClass("sidebar-active");
+    $(".hamburger-inner").removeClass("sidebar-active");
+    reScroll();
+}
 
 $contentDiv.on("click", (event) => {
     const $target = $(event.target);
@@ -93,20 +111,8 @@ $contentDiv.on("click", (event) => {
         $target.parents(".btn-hamburger").length === 1;
 
     if (!isSidebarActive && burgerBtnClicked) {
-        $contentDiv.addClass("sidebar-active");
-        $stickyHeader.addClass("sidebar-active");
-        $(".hamburger-inner").addClass("sidebar-active");
+        showSidebar();
     } else if (isSidebarActive) {
-        $contentDiv.removeClass("sidebar-active");
-        $stickyHeader.removeClass("sidebar-active");
-        $(".hamburger-inner").removeClass("sidebar-active");
+        hideSidebar();
     }
 });
-
-// $(".btn-hamburger").on("click", () => {
-//     showSidebar();
-// });
-
-function showSidebar() {
-    $contentDiv.addClass("sidebar-active");
-}

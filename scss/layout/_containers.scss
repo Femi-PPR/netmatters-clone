@@ -189,8 +189,6 @@
 }
 
 .carousel{
-    // padding: 0;
-    // height: 550px;
     position: relative;
 
     @each $service, $styles in $carousel-styles{
@@ -202,42 +200,6 @@
     .slick-list{
         padding: 0;
     }
-    // &-cyber-security{
-    //     @include services-carousel("cyber-security");
-    // }
-
-    // background-color: rgba($colour-carousel-bg, 0.5);
-    // background-image: url(../img/backgrounds/cyber-security.webp);
-    // background-blend-mode: multiply;
-
-    // background-size: cover;
-    // background-position: center;
-    // h1{
-    //     margin-bottom: 1.25rem;
-    // }
-    // p{
-    //     margin-bottom: .375rem + 1.938rem;
-    // }
-    // a{
-    //     margin-bottom: 1.125rem;
-    // }
-
-    // @include mq("lg"){
-    //     background-color: $colour-carousel-bg;
-    //     background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
-    //     background-size: cover;
-    //     background-position: center;
-
-    //     &::before{
-    //         content: "";
-    //         z-index: 0;
-    //         @include abs-pos(0,0,0,0);
-    //         background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
-    //         background-size: cover;
-    //         background-position: center;
-    //     }
-    // }
-
 }
 
 .container-carousel{
@@ -280,7 +242,6 @@
 
 .owl-stage{
     display: flex;
-    // gap: 90px;
     overflow-x: clip;
     height: 70px;
 

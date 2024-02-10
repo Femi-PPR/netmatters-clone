@@ -111,11 +111,11 @@ $colour-cookie-wrapper-bg   : rgba(black, .7);
 $colour-modal-border        : 1px solid $mecury;
 
 $modal-styles: (
-    "divider"       : 1px solid $mecury,
-    "box-shadow"    : 0 5px 15px rgba(0,0,0,.5),
-    "content-colour": $dove-gray,
-    "btn-settings-bg": $manatee,
-    "btn-accept-bg": $wisteria,
+    "divider"           : 1px solid $mecury,
+    "box-shadow"        : 0 5px 15px rgba(0,0,0,.5),
+    "content-colour"    : $dove-gray,
+    "btn-settings-bg"   : $manatee,
+    "btn-accept-bg"     : $wisteria,
 );
 
 $carousel-styles: (
@@ -124,32 +124,32 @@ $carousel-styles: (
         "hover-colour"  : #7e57a0,
         "hover-border"  : #735093,
     ),
-    "bespoke-software": (
+    "bespoke-software"  : (
         "colour"        : $hoki,
         "hover-colour"  : #566c88,
         "hover-border"  : #4e627b,
     ),
-    "it-support": (
+    "it-support"        : (
         "colour"        : $havelock-blue,
         "hover-colour"  : #2a6ec6,
         "hover-border"  : #2665b5,
     ),
-    "digital-marketing": (
+    "digital-marketing" : (
         "colour"        : $shamock,
         "hover-colour"  : #26ab5f,
         "hover-border"  : #239a55,
     ),
-    "telecoms-services": (
+    "telecoms-services" : (
         "colour"        : $valencia,
         "hover-colour"  : #c42e2a,
         "hover-border"  : #b32a27,
     ),
-    "web-design": (
+    "web-design"        : (
         "colour"        : $wisteria,
         "hover-colour"  : #7e57a0,
         "hover-border"  : #735093,
     ),
-    "cyber-security": (
+    "cyber-security"    : (
         "colour"        : $radical-red,
         "hover-colour"  : #e80a42,
         "hover-border"  : #d4093c,

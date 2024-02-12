@@ -741,8 +741,10 @@ article {
   padding: 30px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  overflow: scroll; }
 .cookie-modal {
+  display: table;
+  margin: auto 0;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);

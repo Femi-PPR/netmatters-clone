@@ -209,7 +209,8 @@ article {
   background-color: #333645;
   color: #fff; }
   .branding a {
-    color: #fff; }
+    color: #fff;
+    text-wrap: nowrap; }
   .branding strong {
     font-weight: 600; }
 

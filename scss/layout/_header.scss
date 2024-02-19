@@ -21,6 +21,7 @@
     right: 0;
     width: 100%;
     background-color: white;
+    box-shadow: 0 5px 35px rgba(0,0,0,.1);
     transition: right .5s;
 
     &.sidebar-active{

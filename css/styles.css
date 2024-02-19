@@ -25,12 +25,17 @@
   box-sizing: border-box;
   margin: 0; }
 
+html {
+  height: 100%; }
+
 body {
   font-family: "Poppins", sans-serif;
   color: #333645;
   letter-spacing: .4px;
   margin: 0px;
-  overscroll-behavior-y: none; }
+  overscroll-behavior-y: none;
+  overflow: hidden;
+  height: 100%; }
 
 button {
   font-family: "Poppins", sans-serif; }
@@ -776,10 +781,15 @@ article {
 
 .content {
   position: relative;
+  overflow: hidden;
+  height: 100%;
   z-index: 10;
   background-color: white;
   right: 0;
   transition: all .5s; }
+  .content-inner {
+    height: 100%;
+    overflow: auto; }
   .content::after {
     content: "";
     position: absolute;
@@ -793,7 +803,6 @@ article {
     transition: opacity .5s; }
   .content.sidebar-active {
     right: 275px;
-    overflow: hidden;
     cursor: pointer; }
     .content.sidebar-active::after {
       width: 100%;
@@ -1108,6 +1117,7 @@ h1, h2, h3 {
     background: #333645;
     border: none;
     display: flex;
+    display: none;
     justify-content: center;
     align-items: center; }
     .btn-chat svg {
@@ -1177,6 +1187,9 @@ h1, h2, h3 {
   .btn-accept {
     background-color: #926fb1;
     border-color: #926fb1; }
+
+.no-show .btn-chat {
+  display: flex; }
 
 .btns {
   display: inline-flex;

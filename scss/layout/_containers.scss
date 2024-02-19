@@ -273,6 +273,7 @@
     img{
         filter: grayscale(1);
         width: auto;
+        max-width: 200px;
         max-height: 100%;
     }
 }
@@ -293,6 +294,7 @@
         h3{
             font-size: 1.125rem;
             padding-bottom: 17px;
+            line-height: 1.1;
             font-weight: $font-weight-normal;
         }
 
@@ -303,10 +305,12 @@
         p{
             font-size: .8125rem;
             line-height: 1.375rem;
+            margin: 0;
         }
 
         a{
             color: $white;
+            margin-top: 11px;
         }
 
         .icon-rarrow-btn{

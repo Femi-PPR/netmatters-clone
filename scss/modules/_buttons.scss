@@ -55,6 +55,7 @@
         @include circle-icon(60px, $colour-primary);
         border: none;
         display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
 
@@ -139,6 +140,10 @@
         background-color: map-get($modal-styles, "btn-accept-bg");
         border-color: map-get($modal-styles, "btn-accept-bg");
     }
+}
+
+.no-show .btn-chat{
+    display: flex;
 }
 
 .btns{

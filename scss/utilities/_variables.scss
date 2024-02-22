@@ -107,6 +107,54 @@ $colour-required            : #d24d57;
 $colour-focus-border        : #5bc0de;
 $colour-focus-shadow        : rgba(#5bc0de, 0.6);
 $colour-dot-hover           : #869791;
+$colour-cookie-wrapper-bg   : rgba(black, .7);
+$colour-modal-border        : 1px solid $mecury;
+
+$modal-styles: (
+    "divider"           : 1px solid $mecury,
+    "box-shadow"        : 0 5px 15px rgba(0,0,0,.5),
+    "content-colour"    : $dove-gray,
+    "btn-settings-bg"   : $manatee,
+    "btn-accept-bg"     : $wisteria,
+);
+
+$carousel-styles: (
+    "technology-company": (
+        "colour"        : $wisteria,
+        "hover-colour"  : #7e57a0,
+        "hover-border"  : #735093,
+    ),
+    "bespoke-software"  : (
+        "colour"        : $hoki,
+        "hover-colour"  : #566c88,
+        "hover-border"  : #4e627b,
+    ),
+    "it-support"        : (
+        "colour"        : $havelock-blue,
+        "hover-colour"  : #2a6ec6,
+        "hover-border"  : #2665b5,
+    ),
+    "digital-marketing" : (
+        "colour"        : $shamock,
+        "hover-colour"  : #26ab5f,
+        "hover-border"  : #239a55,
+    ),
+    "telecoms-services" : (
+        "colour"        : $valencia,
+        "hover-colour"  : #c42e2a,
+        "hover-border"  : #b32a27,
+    ),
+    "web-design"        : (
+        "colour"        : $wisteria,
+        "hover-colour"  : #7e57a0,
+        "hover-border"  : #735093,
+    ),
+    "cyber-security"    : (
+        "colour"        : $radical-red,
+        "hover-colour"  : #e80a42,
+        "hover-border"  : #d4093c,
+    ),
+);
 
 $btn-colours: (
     "google"        : $dodger-blue,
@@ -125,6 +173,8 @@ $btn-colours-hover: (
     "-contact"      : ("bg" : #84858f, "border": #797a85),
     "-search-header": #7e808a,
     "-carousel"     : ("bg" : #e80a42, "border": #d4093c),
+    "-settings"     : ("bg" : #84858f, "border": #797a85),
+    "-accept"       : ("bg" : #7e57a0, "border": #735093),
 );
 
 $search-mobile-colours: (

@@ -158,3 +158,132 @@
     font-size: 2rem;
     line-height: 1.1;
 }
+
+.side-nav-mobile{
+    padding: 21px;
+    @include hide-at-viewport("lg");
+
+    .nav-header{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-item-header{
+        flex: 1;
+    }
+
+    .nav-link{
+        outline: 1px solid rgba(0,0,0,.25);
+        border: 1px solid hsla(0,0%,100%,.1);
+        border-radius: 3px;
+        line-height: 1.42857143;
+    }
+
+    .submenu{
+        display: block;
+        padding: 0;
+        margin-top: 20px;
+
+        &-items{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            margin: 0;
+            gap:0;
+        }
+
+        &-item{
+            flex: 1;
+            border-top: 1px solid rgba(0,0,0,.45);
+            padding: 0;
+        }
+
+        &-link{
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid hsla(0,0%,100%,.05);
+            background-color: rgba(0,0,0,.25);
+            text-transform: uppercase;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+            line-height: 1.42857143;
+        }
+    }
+
+    .nav-submenu{
+        margin: 0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+}
+
+.side-nav-main{
+    .nav-header{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-transform: uppercase;
+        border-top: 1px solid rgba(0,0,0,.25);
+        border-bottom: 1px solid hsla(0,0%,100%,.1);
+    }
+
+    .nav-item-header{
+        border-top: 1px solid hsla(0,0%,100%,.1);
+        border-bottom: 1px solid rgba(0,0,0,.25);
+    }
+
+    .item-services{
+        @include show-at-viewport("lg");
+    }
+
+    .item-support{
+        @include hide-at-viewport("lg");
+    }
+
+    .nav-link{
+        padding: 20px;
+        text-align: start;
+        font-size: 1rem;
+    }
+
+    .submenu{
+        padding: 0;
+
+        &-items{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            margin: 0;
+            gap:0;
+        }
+
+        &-item{
+            flex: 1;
+            border-top: 1px solid rgba(0,0,0,.45);
+            padding: 0;
+        }
+
+        &-link{
+            display: block;
+            border-top: 1px solid hsla(0,0%,100%,.05);
+            background-color: rgba(0,0,0,.25);
+            color: white;
+            padding: 15px 20px;
+            font-size: .875rem;
+            line-height: 1.42857143;
+
+            @include icon("\BB"){
+                padding-right: 19px;
+            }
+        }
+    }
+    
+    .nav-submenu{
+        margin: 0;
+    }
+}

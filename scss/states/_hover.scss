@@ -60,7 +60,9 @@ button:hover{
             @if $btn == "-support" or 
             $btn == "-contact" or 
             $btn == "" or 
-            $btn == "-carousel"{
+            $btn == "-carousel" or 
+            $btn == "-settings" or
+            $btn == "-accept"{
                 background-color: map-get($colour, "bg");
                 border-color: map-get($colour, "border");
             }
@@ -68,7 +70,10 @@ button:hover{
                 background-color: $colour;
             }
 
-            @if $btn == "-prim" or $btn == "-carousel"{
+            @if $btn == "-prim" or 
+            $btn == "-carousel" or
+            $btn == "-settings" or
+            $btn == "-accept"{
                 text-decoration: none;
             }
 
@@ -91,7 +96,7 @@ button:hover{
     text-decoration: none;
 }
 
-.nav-item-header:hover{
+.content .nav-item-header:hover{
 
     .i-nav::before{
         color: $white;
@@ -132,7 +137,7 @@ button:hover{
     }
 }
 
-.item{
+.content .item{
     @each $service, $colour in $services-colours{
         &-#{$service}{
             .submenu{
@@ -173,15 +178,43 @@ button:hover{
     }
 }
 
-.dot-wrapper:hover{
-    cursor: pointer;
+.dots {
+    li:hover{
+        cursor: pointer;
 
-    .dot{
-        background-color: $colour-dot-hover;
+        .dot{
+            background-color: $colour-dot-hover;
+        }
+    }
 
-        &-active{
+    .slick-active:hover{
+        .dot{
             background-color: $white;
         }
     }
 }
 
+
+.carousel{
+    @each $service, $styles in $carousel-styles{
+        .btn-#{$service}:hover{
+            background-color: map-get($styles, "hover-colour");
+            border-color: map-get($styles, "hover-border");
+            text-decoration: none;
+        }
+    }
+}
+
+.sidebar{
+    .nav-item-header:hover{
+        .nav-link{
+            background-color: hsla(0,0%,100%,.05);
+        }
+    }
+
+    .submenu-link:hover{
+        span{
+            text-decoration: none;
+        }
+    }
+}

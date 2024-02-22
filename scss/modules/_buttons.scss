@@ -50,11 +50,12 @@
         padding: 0;
         right: 25px;
         bottom: 25px;
-        z-index: 99;
+        z-index: 101;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
         @include circle-icon(60px, $colour-primary);
         border: none;
         display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
 
@@ -129,6 +130,20 @@
     &-case-study{
         font-size: 16px;
     }
+
+    &-settings{
+        background-color: map-get($modal-styles, "btn-settings-bg");
+        border-color: map-get($modal-styles, "btn-settings-bg");
+    }
+
+    &-accept{
+        background-color: map-get($modal-styles, "btn-accept-bg");
+        border-color: map-get($modal-styles, "btn-accept-bg");
+    }
+}
+
+.no-show .btn-chat{
+    display: flex;
 }
 
 .btns{
@@ -161,6 +176,25 @@
     display: flex;
     justify-content: center;
     z-index: 1;
+
+    li{
+        padding: 0 10px;
+        display: inline-block;
+        user-select: none;
+    }
+
+    .slick-active{
+        .dot{
+            background-color: $white;
+
+            &::after{
+                content: "";
+                @include abs-pos($t: -6px, $l: -6px);
+                @include circle-icon(23px, transparent);
+                border: 2px solid $white;
+            }
+        }
+    }
 }
 
 .dot{
@@ -200,19 +234,55 @@
         @include hamburger-slice;
         top: 50%;
         margin-top: -1.5px;
+        transition-duration: .22s;
+        transition-timing-function: cubic-bezier(.55,.055,.675,.19);
 
         &::before{
             content: '';
             top: -10px;
+            opacity: 1;
             @include hamburger-slice;
-
+            transition: top .1s ease-in .25s,opacity .1s ease-in;
         }
 
         &::after{
             content: '';
             bottom: -10px;
             @include hamburger-slice;
+            transition: bottom .1s ease-in .25s,transform .22s cubic-bezier(.55,.055,.675,.19);
+        }
+
+        &.sidebar-active{
+            transform: rotate(225deg);
+            transition-delay: .12s;
+            transition-timing-function: cubic-bezier(.215,.61,.355,1);
+
+            &::before{
+                top: 0;
+                opacity: 0;
+                transition: top .1s ease-out,opacity .1s ease-out .12s;
+            }
+
+            &::after{
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition: bottom .1s ease-out,transform .22s cubic-bezier(.215,.61,.355,1) .12s;
+            }
         }
     }
    
+}
+
+.carousel{
+    @each $service, $styles in $carousel-styles{
+        .btn-#{$service}{
+            background-color: map-get($styles, "colour");
+            border-color: map-get($styles, "colour");
+            padding: 5px 20px;
+            line-height: 50px;
+            i{
+                line-height: 50px;
+            }
+        }
+    }
 }

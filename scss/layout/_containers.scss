@@ -68,6 +68,7 @@
 
     a{
         color: $white;
+        text-wrap: nowrap;
     }
 
     strong{
@@ -184,48 +185,28 @@
     
 }
 
-.carousel{
+.banners{
     padding: 0;
-    height: 550px;
+}
+
+.carousel{
     position: relative;
 
-    background-color: rgba($colour-carousel-bg, 0.5);
-    background-image: url(../img/backgrounds/cyber-security.webp);
-    background-blend-mode: multiply;
-
-    background-size: cover;
-    background-position: center;
-    h1{
-        margin-bottom: 1.25rem;
-    }
-    p{
-        margin-bottom: .375rem + 1.938rem;
-    }
-    a{
-        margin-bottom: 1.125rem;
-    }
-
-    @include mq("lg"){
-        background-color: $colour-carousel-bg;
-        background: url('#{$img-path-local}/backgrounds/cyber-security.webp');
-        background-size: cover;
-        background-position: center;
-
-        &::before{
-            content: "";
-            z-index: 0;
-            @include abs-pos(0,0,0,0);
-            background: linear-gradient(270deg,transparent 25%,$colour-carousel-bg);
-            background-size: cover;
-            background-position: center;
+    @each $service, $styles in $carousel-styles{
+        &-#{$service}{
+            @include services-carousel($service);
         }
     }
 
+    .slick-list{
+        padding: 0;
+    }
 }
 
 .container-carousel{
     display: flex;
     flex-direction: column;
+    @include py(60px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -262,20 +243,37 @@
 
 .owl-stage{
     display: flex;
-    gap: 90px;
     overflow-x: clip;
     height: 70px;
-    padding-left: 20px;
+
+    .slick{
+        &-list{
+            overflow-x: clip;
+            overflow-y: visible;
+            padding-left: 20px;
+        }
+
+        &-track{
+            height: 100%;
+        }
+
+    }
+}
+
+.slick-initialized .slick-slide{
+    display: flex;
 }
 
 .owl-item{
     display: flex;
     position: relative;
     align-items: center;
+    margin-right: 90px;
 
     img{
         filter: grayscale(1);
         width: auto;
+        max-width: 200px;
         max-height: 100%;
     }
 }
@@ -296,6 +294,7 @@
         h3{
             font-size: 1.125rem;
             padding-bottom: 17px;
+            line-height: 1.1;
             font-weight: $font-weight-normal;
         }
 
@@ -306,10 +305,12 @@
         p{
             font-size: .8125rem;
             line-height: 1.375rem;
+            margin: 0;
         }
 
         a{
             color: $white;
+            margin-top: 11px;
         }
 
         .icon-rarrow-btn{
@@ -319,6 +320,7 @@
         
     }
 }
+
 
 .arrow{
     position: absolute;
@@ -346,4 +348,93 @@
 
 .partners{
     @include py(50px);
+}
+
+.cookie{
+    &-wrapper{
+        @include fixed-pos();
+        inset: 0;
+        z-index: 100;
+        background-color: $colour-cookie-wrapper-bg;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        overflow: scroll;
+    }
+
+    &-modal{
+        display: table;
+        margin: auto 0;
+        background-color: white;
+        border: 1px solid rgba(black, .2);
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        border-radius: 5px;
+
+        @include mq("md"){
+            width: 600px;
+        }
+    }
+}
+
+.no-show .cookie-wrapper{
+    display: none;
+}
+
+.modal-content{
+    padding: 20px;
+    color: map-get($modal-styles, "content-colour");
+}
+
+.sidebar{
+    background-color: $colour-primary;
+    @include fixed-pos($t:0, $r:0);
+    z-index: 9;
+    height: 100%;
+    width: 275px;
+    overflow: auto;
+
+    @include mq("lg"){
+        width: 350px;
+    }
+}
+
+.content{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    z-index: 10;
+    background-color: white;
+    right: 0;
+    transition: all .5s;
+
+    &-inner{
+        height: 100%;
+        overflow: auto;
+    }
+
+    &::after{
+        content: "";
+        @include abs-pos($t:0, $r:0);
+        z-index: 10;
+        background: rgba(0,0,0,.4);
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+
+    &.sidebar-active{
+        right: 275px;
+        cursor: pointer;
+
+        &::after{
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+
+        @include mq("lg"){
+            right: 350px;
+        }
+    }
 }

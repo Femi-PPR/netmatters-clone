@@ -25,11 +25,17 @@
   box-sizing: border-box;
   margin: 0; }
 
+html {
+  height: 100%; }
+
 body {
   font-family: "Poppins", sans-serif;
   color: #333645;
   letter-spacing: .4px;
-  margin: 0px; }
+  margin: 0px;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+  height: 100%; }
 
 button {
   font-family: "Poppins", sans-serif; }
@@ -77,6 +83,21 @@ article {
 
 .header-top {
   padding: 20px 0; }
+
+.header-sticky {
+  position: fixed;
+  top: -100%;
+  z-index: 9;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+  transition: right .5s; }
+  .header-sticky.sidebar-active {
+    right: 275px; }
+    @media screen and (min-width: 992px) {
+      .header-sticky.sidebar-active {
+        right: 350px; } }
 
 .row {
   margin-left: -15px;
@@ -139,6 +160,13 @@ article {
     .header-article .tag-developer-training {
       background-color: #ce4125; }
 
+.modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e5e5e5; }
+  .modal-header h3 {
+    font-weight: 400;
+    line-height: 1.42857143; }
+
 .container {
   padding: 0px 15px;
   margin: 0 auto; }
@@ -187,7 +215,8 @@ article {
   background-color: #333645;
   color: #fff; }
   .branding a {
-    color: #fff; }
+    color: #fff;
+    text-wrap: nowrap; }
   .branding strong {
     font-weight: 600; }
 
@@ -347,42 +376,264 @@ article {
   background: #ce4125;
   margin-bottom: 17px; }
 
+.banners {
+  padding: 0; }
+
 .carousel {
-  padding: 0;
-  height: 550px;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-image: url(../img/backgrounds/cyber-security.webp);
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-position: center; }
-  .carousel h1 {
-    margin-bottom: 1.25rem; }
-  .carousel p {
-    margin-bottom: 2.313rem; }
-  .carousel a {
-    margin-bottom: 1.125rem; }
-  @media screen and (min-width: 992px) {
-    .carousel {
-      background-color: black;
-      background: url("../img/backgrounds/cyber-security.webp");
-      background-size: cover;
-      background-position: center; }
-      .carousel::before {
-        content: "";
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(270deg, transparent 25%, black);
+  position: relative; }
+  .carousel-technology-company {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/technology-company.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-technology-company h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-technology-company p {
+      margin-bottom: 2.313rem; }
+    .carousel-technology-company a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-technology-company {
+        background-color: black;
+        background: url("../img/backgrounds/technology-company.webp");
         background-size: cover;
-        background-position: center; } }
+        background-position: center; }
+        .carousel-technology-company::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-bespoke-software {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/bespoke-software.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-bespoke-software h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-bespoke-software p {
+      margin-bottom: 2.313rem; }
+    .carousel-bespoke-software a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-bespoke-software {
+        background-color: black;
+        background: url("../img/backgrounds/bespoke-software.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-bespoke-software::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-it-support {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/it-support.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-it-support h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-it-support p {
+      margin-bottom: 2.313rem; }
+    .carousel-it-support a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-it-support {
+        background-color: black;
+        background: url("../img/backgrounds/it-support.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-it-support::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-digital-marketing {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/digital-marketing.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-digital-marketing h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-digital-marketing p {
+      margin-bottom: 2.313rem; }
+    .carousel-digital-marketing a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-digital-marketing {
+        background-color: black;
+        background: url("../img/backgrounds/digital-marketing.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-digital-marketing::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-telecoms-services {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/telecoms-services.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-telecoms-services h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-telecoms-services p {
+      margin-bottom: 2.313rem; }
+    .carousel-telecoms-services a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-telecoms-services {
+        background-color: black;
+        background: url("../img/backgrounds/telecoms-services.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-telecoms-services::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-web-design {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/web-design.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-web-design h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-web-design p {
+      margin-bottom: 2.313rem; }
+    .carousel-web-design a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-web-design {
+        background-color: black;
+        background: url("../img/backgrounds/web-design.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-web-design::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel-cyber-security {
+    padding: 0;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/backgrounds/cyber-security.webp);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center; }
+    .carousel-cyber-security h1 {
+      margin-bottom: 1.25rem; }
+    .carousel-cyber-security p {
+      margin-bottom: 2.313rem; }
+    .carousel-cyber-security a {
+      margin-bottom: 1.125rem; }
+    @media screen and (min-width: 992px) {
+      .carousel-cyber-security {
+        background-color: black;
+        background: url("../img/backgrounds/cyber-security.webp");
+        background-size: cover;
+        background-position: center; }
+        .carousel-cyber-security::before {
+          content: "";
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(270deg, transparent 25%, black);
+          background-size: cover;
+          background-position: center; } }
+  .carousel .slick-list {
+    padding: 0; }
 
 .container-carousel {
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -416,18 +667,27 @@ article {
 
 .owl-stage {
   display: flex;
-  gap: 90px;
   overflow-x: clip;
-  height: 70px;
-  padding-left: 20px; }
+  height: 70px; }
+  .owl-stage .slick-list {
+    overflow-x: clip;
+    overflow-y: visible;
+    padding-left: 20px; }
+  .owl-stage .slick-track {
+    height: 100%; }
+
+.slick-initialized .slick-slide {
+  display: flex; }
 
 .owl-item {
   display: flex;
   position: relative;
-  align-items: center; }
+  align-items: center;
+  margin-right: 90px; }
   .owl-item img {
     filter: grayscale(1);
     width: auto;
+    max-width: 200px;
     max-height: 100%; }
 
 .owl-description {
@@ -447,14 +707,17 @@ article {
     .owl-description .box h3 {
       font-size: 1.125rem;
       padding-bottom: 17px;
+      line-height: 1.1;
       font-weight: 400; }
     .owl-description .box .no-description {
       padding: 0 !important; }
     .owl-description .box p {
       font-size: .8125rem;
-      line-height: 1.375rem; }
+      line-height: 1.375rem;
+      margin: 0; }
     .owl-description .box a {
-      color: #fff; }
+      color: #fff;
+      margin-top: 11px; }
     .owl-description .box .icon-rarrow-btn {
       font-size: 16px; }
 
@@ -480,6 +743,79 @@ article {
 .partners {
   padding-top: 50px;
   padding-bottom: 50px; }
+
+.cookie-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  overflow: scroll; }
+.cookie-modal {
+  display: table;
+  margin: auto 0;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border-radius: 5px; }
+  @media screen and (min-width: 768px) {
+    .cookie-modal {
+      width: 600px; } }
+
+.no-show .cookie-wrapper {
+  display: none; }
+
+.modal-content {
+  padding: 20px;
+  color: #666; }
+
+.sidebar {
+  background-color: #333645;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  height: 100%;
+  width: 275px;
+  overflow: auto; }
+  @media screen and (min-width: 992px) {
+    .sidebar {
+      width: 350px; } }
+
+.content {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+  right: 0;
+  transition: all .5s; }
+  .content-inner {
+    height: 100%;
+    overflow: auto; }
+  .content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: opacity .5s; }
+  .content.sidebar-active {
+    right: 275px;
+    cursor: pointer; }
+    .content.sidebar-active::after {
+      width: 100%;
+      height: 100%;
+      opacity: 1; }
+    @media screen and (min-width: 992px) {
+      .content.sidebar-active {
+        right: 350px; } }
 
 .footer-main {
   padding-top: 27px;
@@ -543,6 +879,20 @@ article {
   @media screen and (min-width: 1260px) {
     .container-footer {
       flex-direction: row; } }
+
+.modal-footer {
+  padding: 19px 20px 20px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; }
+  @media screen and (min-width: 768px) {
+    .modal-footer {
+      flex-direction: row; } }
+  .modal-footer .btn {
+    flex: 1;
+    align-items: center;
+    justify-content: center; }
 
 .branding-title {
   margin: -6px 0 40px; }
@@ -764,7 +1114,7 @@ h1, h2, h3 {
     padding: 0;
     right: 25px;
     bottom: 25px;
-    z-index: 99;
+    z-index: 101;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 50%;
     width: 60px;
@@ -772,6 +1122,7 @@ h1, h2, h3 {
     background: #333645;
     border: none;
     display: flex;
+    display: none;
     justify-content: center;
     align-items: center; }
     .btn-chat svg {
@@ -835,6 +1186,15 @@ h1, h2, h3 {
       line-height: 50px; }
   .btn-case-study {
     font-size: 16px; }
+  .btn-settings {
+    background-color: #999aa2;
+    border-color: #999aa2; }
+  .btn-accept {
+    background-color: #926fb1;
+    border-color: #926fb1; }
+
+.no-show .btn-chat {
+  display: flex; }
 
 .btns {
   display: inline-flex;
@@ -900,6 +1260,22 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   z-index: 1; }
+  .dots li {
+    padding: 0 10px;
+    display: inline-block;
+    user-select: none; }
+  .dots .slick-active .dot {
+    background-color: #fff; }
+    .dots .slick-active .dot::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      border-radius: 50%;
+      width: 23px;
+      height: 23px;
+      background: transparent;
+      border: 2px solid #fff; }
 
 .dot {
   display: block;
@@ -937,15 +1313,19 @@ h1, h2, h3 {
   background-color: #fff;
   display: block;
   top: 50%;
-  margin-top: -1.5px; }
+  margin-top: -1.5px;
+  transition-duration: .22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger-inner::before {
     content: '';
     top: -10px;
+    opacity: 1;
     width: 33px;
     height: 4px;
     position: absolute;
     background-color: #fff;
-    display: block; }
+    display: block;
+    transition: top .1s ease-in .25s,opacity .1s ease-in; }
   .hamburger-inner::after {
     content: '';
     bottom: -10px;
@@ -953,7 +1333,70 @@ h1, h2, h3 {
     height: 4px;
     position: absolute;
     background-color: #fff;
-    display: block; }
+    display: block;
+    transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger-inner.sidebar-active {
+    transform: rotate(225deg);
+    transition-delay: .12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .hamburger-inner.sidebar-active::before {
+      top: 0;
+      opacity: 0;
+      transition: top .1s ease-out,opacity .1s ease-out .12s; }
+    .hamburger-inner.sidebar-active::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s; }
+
+.carousel .btn-technology-company {
+  background-color: #926fb1;
+  border-color: #926fb1;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-technology-company i {
+    line-height: 50px; }
+.carousel .btn-bespoke-software {
+  background-color: #67809f;
+  border-color: #67809f;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-bespoke-software i {
+    line-height: 50px; }
+.carousel .btn-it-support {
+  background-color: #4183d7;
+  border-color: #4183d7;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-it-support i {
+    line-height: 50px; }
+.carousel .btn-digital-marketing {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-digital-marketing i {
+    line-height: 50px; }
+.carousel .btn-telecoms-services {
+  background-color: #d64541;
+  border-color: #d64541;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-telecoms-services i {
+    line-height: 50px; }
+.carousel .btn-web-design {
+  background-color: #926fb1;
+  border-color: #926fb1;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-web-design i {
+    line-height: 50px; }
+.carousel .btn-cyber-security {
+  background-color: #f62459;
+  border-color: #f62459;
+  padding: 5px 20px;
+  line-height: 50px; }
+  .carousel .btn-cyber-security i {
+    line-height: 50px; }
 
 .nav-footer {
   padding-left: 0; }
@@ -1074,6 +1517,105 @@ h1, h2, h3 {
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.1; }
+
+.side-nav-mobile {
+  padding: 21px;
+  display: block; }
+  @media screen and (min-width: 992px) {
+    .side-nav-mobile {
+      display: none; } }
+  .side-nav-mobile .nav-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; }
+  .side-nav-mobile .nav-item-header {
+    flex: 1; }
+  .side-nav-mobile .nav-link {
+    outline: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    line-height: 1.42857143; }
+  .side-nav-mobile .submenu {
+    display: block;
+    padding: 0;
+    margin-top: 20px; }
+    .side-nav-mobile .submenu-items {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
+      gap: 0; }
+    .side-nav-mobile .submenu-item {
+      flex: 1;
+      border-top: 1px solid rgba(0, 0, 0, 0.45);
+      padding: 0; }
+    .side-nav-mobile .submenu-link {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background-color: rgba(0, 0, 0, 0.25);
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 1rem;
+      line-height: 1.42857143; }
+  .side-nav-mobile .nav-submenu {
+    margin: 0;
+    border-radius: 3px;
+    overflow: hidden; }
+
+.side-nav-main .nav-header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.side-nav-main .nav-item-header {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+.side-nav-main .item-services {
+  display: none; }
+  @media screen and (min-width: 992px) {
+    .side-nav-main .item-services {
+      display: block; } }
+.side-nav-main .item-support {
+  display: block; }
+  @media screen and (min-width: 992px) {
+    .side-nav-main .item-support {
+      display: none; } }
+.side-nav-main .nav-link {
+  padding: 20px;
+  text-align: start;
+  font-size: 1rem; }
+.side-nav-main .submenu {
+  padding: 0; }
+  .side-nav-main .submenu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    gap: 0; }
+  .side-nav-main .submenu-item {
+    flex: 1;
+    border-top: 1px solid rgba(0, 0, 0, 0.45);
+    padding: 0; }
+  .side-nav-main .submenu-link {
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 15px 20px;
+    font-size: .875rem;
+    line-height: 1.42857143; }
+    .side-nav-main .submenu-link::before {
+      content: "»";
+      padding-right: 19px; }
+.side-nav-main .nav-submenu {
+  margin: 0; }
 
 [class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon" !important;
@@ -1616,6 +2158,14 @@ button:hover {
   background-color: #e80a42;
   border-color: #d4093c;
   text-decoration: none; }
+.btn-settings:hover {
+  background-color: #84858f;
+  border-color: #797a85;
+  text-decoration: none; }
+.btn-accept:hover {
+  background-color: #7e57a0;
+  border-color: #735093;
+  text-decoration: none; }
 .btn-facebook:hover {
   background-color: #3b5998; }
 .btn-linkedin:hover {
@@ -1630,11 +2180,11 @@ button:hover {
 .nav-link:hover {
   text-decoration: none; }
 
-.nav-item-header:hover .i-nav::before {
+.content .nav-item-header:hover .i-nav::before {
   color: #fff; }
-.nav-item-header:hover i {
+.content .nav-item-header:hover i {
   text-decoration: none; }
-.nav-item-header:hover .submenu {
+.content .nav-item-header:hover .submenu {
   display: block;
   position: absolute;
   top: 100%;
@@ -1642,7 +2192,7 @@ button:hover {
   color: #fff;
   min-width: 100%;
   z-index: 10; }
-.nav-item-header:hover .submenu-link {
+.content .nav-item-header:hover .submenu-link {
   color: #fff; }
 
 .submenu-link:hover {
@@ -1655,11 +2205,11 @@ button:hover {
 .owl-item:hover .owl-description {
   display: block; }
 
-.item-bespoke-software .submenu {
+.content .item-bespoke-software .submenu {
   background-color: #526781; }
-.item-bespoke-software:hover {
+.content .item-bespoke-software:hover {
   background-color: #67809f; }
-  .item-bespoke-software:hover .nav-link::before {
+  .content .item-bespoke-software:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1670,13 +2220,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #67809f transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-bespoke-software:hover .nav-link::before {
+      .content .item-bespoke-software:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-it-support .submenu {
+.content .item-it-support .submenu {
   background-color: #286abd; }
-.item-it-support:hover {
+.content .item-it-support:hover {
   background-color: #4183d7; }
-  .item-it-support:hover .nav-link::before {
+  .content .item-it-support:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1687,13 +2237,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #4183d7 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-it-support:hover .nav-link::before {
+      .content .item-it-support:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-digital-marketing .submenu {
+.content .item-digital-marketing .submenu {
   background-color: #25a25a; }
-.item-digital-marketing:hover {
+.content .item-digital-marketing:hover {
   background-color: #2ecc71; }
-  .item-digital-marketing:hover .nav-link::before {
+  .content .item-digital-marketing:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1704,13 +2254,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #2ecc71 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-digital-marketing:hover .nav-link::before {
+      .content .item-digital-marketing:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-telecoms-services .submenu {
+.content .item-telecoms-services .submenu {
   background-color: #bc2c28; }
-.item-telecoms-services:hover {
+.content .item-telecoms-services:hover {
   background-color: #d64541; }
-  .item-telecoms-services:hover .nav-link::before {
+  .content .item-telecoms-services:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1721,13 +2271,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #d64541 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-telecoms-services:hover .nav-link::before {
+      .content .item-telecoms-services:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-web-design .submenu {
+.content .item-web-design .submenu {
   background-color: #79539a; }
-.item-web-design:hover {
+.content .item-web-design:hover {
   background-color: #926fb1; }
-  .item-web-design:hover .nav-link::before {
+  .content .item-web-design:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1738,13 +2288,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #926fb1 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-web-design:hover .nav-link::before {
+      .content .item-web-design:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-cyber-security .submenu {
+.content .item-cyber-security .submenu {
   background-color: #de093f; }
-.item-cyber-security:hover {
+.content .item-cyber-security:hover {
   background-color: #f62459; }
-  .item-cyber-security:hover .nav-link::before {
+  .content .item-cyber-security:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1755,13 +2305,13 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #f62459 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-cyber-security:hover .nav-link::before {
+      .content .item-cyber-security:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
-.item-developer-training .submenu {
+.content .item-developer-training .submenu {
   background-color: #a3331d; }
-.item-developer-training:hover {
+.content .item-developer-training:hover {
   background-color: #ce4125; }
-  .item-developer-training:hover .nav-link::before {
+  .content .item-developer-training:hover .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1772,7 +2322,7 @@ button:hover {
     border-width: 35px 68px 0;
     border-color: #ce4125 transparent transparent; }
     @media screen and (min-width: 1260px) {
-      .item-developer-training:hover .nav-link::before {
+      .content .item-developer-training:hover .nav-link::before {
         border-width: 35px 83.5px 0; } }
 
 .box .btn-bespoke-software:hover {
@@ -1788,12 +2338,46 @@ button:hover {
   background-color: #7e57a0;
   border-color: #735093; }
 
-.dot-wrapper:hover {
+.dots li:hover {
   cursor: pointer; }
-  .dot-wrapper:hover .dot {
+  .dots li:hover .dot {
     background-color: #869791; }
-    .dot-wrapper:hover .dot-active {
-      background-color: #fff; }
+.dots .slick-active:hover .dot {
+  background-color: #fff; }
+
+.carousel .btn-technology-company:hover {
+  background-color: #7e57a0;
+  border-color: #735093;
+  text-decoration: none; }
+.carousel .btn-bespoke-software:hover {
+  background-color: #566c88;
+  border-color: #4e627b;
+  text-decoration: none; }
+.carousel .btn-it-support:hover {
+  background-color: #2a6ec6;
+  border-color: #2665b5;
+  text-decoration: none; }
+.carousel .btn-digital-marketing:hover {
+  background-color: #26ab5f;
+  border-color: #239a55;
+  text-decoration: none; }
+.carousel .btn-telecoms-services:hover {
+  background-color: #c42e2a;
+  border-color: #b32a27;
+  text-decoration: none; }
+.carousel .btn-web-design:hover {
+  background-color: #7e57a0;
+  border-color: #735093;
+  text-decoration: none; }
+.carousel .btn-cyber-security:hover {
+  background-color: #e80a42;
+  border-color: #d4093c;
+  text-decoration: none; }
+
+.sidebar .nav-item-header:hover .nav-link {
+  background-color: rgba(255, 255, 255, 0.05); }
+.sidebar .submenu-link:hover span {
+  text-decoration: none; }
 
 input:focus {
   border-color: #5bc0de;

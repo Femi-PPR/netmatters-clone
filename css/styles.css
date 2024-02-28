@@ -817,6 +817,60 @@ article {
       .content.sidebar-active {
         right: 350px; } }
 
+.location-container {
+  padding: 0; }
+
+.breadcrumb-wrapper {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .breadcrumb-wrapper {
+      display: block; } }
+
+.office-title {
+  background-color: #333645;
+  padding: 24px 0;
+  margin-bottom: 50px; }
+.office-cards {
+  margin-top: 80px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr; }
+.office-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; }
+.office-details {
+  display: flex;
+  padding: 30px;
+  gap: 15px;
+  flex-direction: column;
+  align-items: start; }
+  .office-details p {
+    margin: 0; }
+.office-img {
+  width: 100%;
+  height: auto; }
+  .office-img-link {
+    display: flex; }
+
+.contact-us-container {
+  padding-top: 44px; }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px; }
+  .contact-info p {
+    margin: 0; }
+
+.dropdown {
+  font-weight: 600; }
+
+#dropdown-content {
+  display: none; }
+
 .footer-main {
   padding-top: 27px;
   background-color: #323544; }
@@ -1040,6 +1094,32 @@ article {
       .p-footer span:last-of-type::before {
         display: inline; } }
 
+.office-title {
+  color: #fff; }
+  .office-title h2 {
+    font-size: 2.25rem;
+    font-weight: 400; }
+.office-details p {
+  font-size: .8125rem;
+  line-height: 1.375rem; }
+.office-card-title {
+  font-size: 1.25rem;
+  line-height: 1.1; }
+.office-contact-link {
+  color: #926fb1;
+  font-weight: 700;
+  font-size: 1.625rem;
+  line-height: 1.1; }
+
+.contact-info .office-contact-link, .contact-info strong {
+  font-weight: 600; }
+
+.out-of-hours p {
+  color: #666; }
+.out-of-hours strong {
+  color: #333645;
+  font-weight: 600; }
+
 .icon-rarrow-link::before, .icon-rarrow-btn::before {
   content: ""; }
 
@@ -1192,6 +1272,11 @@ h1, h2, h3 {
   .btn-accept {
     background-color: #926fb1;
     border-color: #926fb1; }
+  .btn-office-card {
+    padding: 5px 30px;
+    background-color: #926fb1;
+    font-size: .9rem;
+    line-height: 35px; }
 
 .no-show .btn-chat {
   display: flex; }
@@ -1686,6 +1771,9 @@ h1, h2, h3 {
     content: "";
     color: orange;
     font-size: 50px; }
+
+.fa-chevron-down::before {
+  content: ""; }
 
 .mdi-checked {
   visibility: hidden; }

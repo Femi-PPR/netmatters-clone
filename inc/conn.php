@@ -1,8 +1,8 @@
 <?php
-require_once realpath("../vendor/autoload.php");
+require_once realpath(__DIR__ . "/../vendor/autoload.php");
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable("../");
+$dotenv = Dotenv::createImmutable(realpath(__DIR__ . "/../"));
 $dotenv->load();
 
 try {
@@ -12,3 +12,5 @@ try {
     echo $e->getMessage();
     die();
 }
+
+$rs = $db->query("SELECT * FROM News JOIN Authors ON Authors.ID = News.AuthorID");

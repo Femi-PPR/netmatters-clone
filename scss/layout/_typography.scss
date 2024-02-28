@@ -174,3 +174,49 @@
         }
     }
 }
+
+.office{
+    &-title{
+        color: $white;
+        h2{
+            font-size: 2.25rem;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    &-details{
+        p{
+            font-size: .8125rem;
+            line-height: 1.375rem;
+        }
+    }
+    &-card-title{
+        font-size: 1.25rem;
+        line-height: 1.1;
+    }
+    
+    &-contact-link{
+        color: $colour-office-link;
+        font-weight: 700;
+        font-size: 1.625rem;
+        line-height: 1.1;
+    }
+}
+
+.contact-info{    
+    .office-contact-link, strong{
+        font-weight: $font-weight-bold;
+    }
+}
+
+.out-of-hours{
+    p{
+        color: $colour-ooh-text;
+    }
+
+    strong{
+        color: $colour-primary;
+        font-weight: $font-weight-bold;
+    }
+}
+

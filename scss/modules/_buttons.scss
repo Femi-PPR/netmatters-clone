@@ -140,6 +140,14 @@
         background-color: map-get($modal-styles, "btn-accept-bg");
         border-color: map-get($modal-styles, "btn-accept-bg");
     }
+
+    &-office-card{
+        padding: 5px 30px;
+        background-color: $colour-btn-office-card;
+        font-size: .9rem;
+        line-height: 35px;
+
+    }
 }
 
 .no-show .btn-chat{

@@ -84,6 +84,10 @@
     @include icon($icon-star, $colour-star, 50px);
 }
 
+.fa-chevron-down{
+    @include icon($icon-chevron-down);
+}
+
 .mdi-checked{
     visibility: hidden;
 

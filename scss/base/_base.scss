@@ -25,6 +25,10 @@ input{
     @include base-font;
 }
 
+textarea{
+    @include base-font;
+}
+
 a{
     text-decoration: none;
     color: $colour-text;

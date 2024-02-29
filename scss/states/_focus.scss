@@ -1,4 +1,4 @@
-input:focus{
+input:focus, textarea:focus{
     border-color: $colour-focus-border;
     outline: 0;
     box-shadow: inset 0 1px 1px map-get($search-mobile-colours, "input-shadow"),

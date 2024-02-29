@@ -10,7 +10,10 @@
                     <label class="required" for="email">Your Email</label><input id="email" type="text">
                 </div>
             </div>
-            <?php include 'privacy.php'; ?>
+            <?php
+            $checkboxID = "pretty-checkbox-newsletter";
+            include 'privacy.php';
+            ?>
 
             <button class="btn">Subscribe</button>
         </form>

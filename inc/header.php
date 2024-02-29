@@ -7,7 +7,7 @@
                             alt="Netmatters Logo"></div>
                 </a>
                 <a href="#" class="btn btn-header btn-support"><i class="icon-mouse"></i>Support</a>
-                <a href="#" class="btn btn-header btn-contact"><i class="icon-paperplane"></i>Contact</a>
+                <a href="contact-us.php" class="btn btn-header btn-contact"><i class="icon-paperplane"></i>Contact</a>
                 <div class="search-header">
                     <form class="form-header">
                         <input placeholder="Search..." type="text">

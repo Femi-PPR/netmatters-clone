@@ -2,7 +2,7 @@
     <nav class="side-nav-mobile">
         <div class="">
             <ul class="nav-header">
-                <li class="nav-item-header"><a href="" class="nav-link">Contact Us</a></li>
+                <li class="nav-item-header"><a href="contact-us.php" class="nav-link">Contact Us</a></li>
                 <li class="nav-item-header item-bespoke-software">
                     <a href="" class="nav-link"><i
                             class=" i-nav icon-bespoke-software"></i><small>Bespoke</small>Software</a>
@@ -265,7 +265,7 @@
                     </div>
                 </li>
                 <li class="nav-item-header item-cyber-security">
-                    <a href="" class="nav-link">Contact Us</a>
+                    <a href="contact-us.php" class="nav-link">Contact Us</a>
                     <div class="submenu">
                         <div class="nav-submenu">
                             <ul class="submenu-items">

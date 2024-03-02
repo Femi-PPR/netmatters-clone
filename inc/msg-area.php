@@ -1,5 +1,5 @@
 <?php
-include "alerts.php";
+require_once "alerts.php";
 if (!isset($alertMsgs))
     $alertMsgs = [["type" => "success", "msg" => "Success"]];
 ?>

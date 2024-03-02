@@ -3,15 +3,15 @@
 <?php
 $title = "Contact Us | Netmatters";
 ini_set("display_errors", 1);
-include "inc/head.php";
+require "inc/head.php";
 ?>
 
 <body>
-    <?php include "inc/cookie.php"; ?>
-    <?php include "inc/sidebar.php"; ?>
+    <?php require "inc/cookie.php"; ?>
+    <?php require "inc/sidebar.php"; ?>
     <div class="content">
         <div class="content-inner">
-            <?php include "inc/header.php"; ?>
+            <?php require "inc/header.php"; ?>
             <main>
                 <section class="location-container">
                     <div class="breadcrumb-wrapper">
@@ -183,8 +183,8 @@ include "inc/head.php";
                     <div class="form-contact-wrapper">
                         <form method="post" action="#form-contact" id="form-contact" class="form-contact">
                             <?php
-                            include "inc/validate.php";
-                            include 'inc/conn.php';
+                            require_once "inc/validate.php";
+                            require_once 'inc/conn.php';
                             $errMsgs = [
                                 "name" => [
                                     "required" => "The name field is required."
@@ -237,7 +237,7 @@ include "inc/head.php";
                                 }
                             }
 
-                            include "inc/msg-area.php";
+                            require "inc/msg-area.php";
                             ?>
                             <div class="contact-input-wrapper">
                                 <label for="contact-name" class="required">Your Name</label>
@@ -273,7 +273,7 @@ include "inc/head.php";
                             </div>
                             <?php
                             $checkboxID = "pretty-checkbox-contact";
-                            include 'inc/privacy.php';
+                            require 'inc/privacy.php';
                             ?>
                             <div class="recaptcha">This site is protected by reCAPTCHA and the Google <a href="#"
                                     class="privacy-policy">Privacy
@@ -286,9 +286,9 @@ include "inc/head.php";
                     </div>
                 </section>
 
-                <?php include "inc/newsletter.php"; ?>
+                <?php require "inc/newsletter.php"; ?>
             </main>
-            <?php include "inc/footer.php"; ?>
+            <?php require "inc/footer.php"; ?>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

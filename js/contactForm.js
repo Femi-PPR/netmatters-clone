@@ -37,7 +37,7 @@ function isValid(name, $formElem) {
     }
 }
 
-$contactForm.on("input", "input", (event) => {
+$contactForm.on("input", "input, textarea", (event) => {
     let target = event.currentTarget;
     if (isValid(target.name, $(target))) $(target).removeAttr("style");
 });

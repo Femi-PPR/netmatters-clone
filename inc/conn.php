@@ -12,5 +12,3 @@ try {
     echo $e->getMessage();
     die();
 }
-
-$rs = $db->query("SELECT * FROM News JOIN Authors ON Authors.ID = News.AuthorID");

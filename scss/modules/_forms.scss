@@ -146,7 +146,7 @@ label.required::after{
 
     @include mq("lg"){
         grid-template-columns: 1fr 1fr;
-        :nth-child(n+5){
+        &>*:nth-child(n+6), &>*:first-child{
             grid-column: span 2;
         }
     }
@@ -209,4 +209,46 @@ label.required::after{
         small{
             font-size: .85rem;
         }
+}
+
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    background-color: transparent;
+    border: none;
+    &:hover{
+        opacity: .5;
+    }
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    line-height: 1.42857143;
+}
+
+.alert-success {
+    color: #fff;
+    background: #2ecc71;
+    border-color: #d6e9c6;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
+.alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
 }

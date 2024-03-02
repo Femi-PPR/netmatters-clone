@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 $title = "Contact Us | Netmatters";
+ini_set("display_errors", 1);
 include "inc/head.php";
 ?>
 
@@ -182,28 +183,93 @@ include "inc/head.php";
                     <div class="form-contact-wrapper">
                         <form method="post" action="#form-contact" id="form-contact" class="form-contact">
                             <?php
-                            echo isset($_POST);
+                            include "inc/validate.php";
+                            include 'inc/conn.php';
+                            $errMsgs = [
+                                "name" => [
+                                    "required" => "The name field is required."
+                                ],
+                                "email" => [
+                                    "required" => "The email field is required.",
+                                    "format" => "The email format is invalid."
+                                ],
+                                "telephone" => [
+                                    "required" => "The phone number field is required.",
+                                    "format" => "The phone number format is invalid."
+                                ],
+                                "msg" => [
+                                    "required" => "The message field is required.",
+                                ],
+                            ];
+                            $successMsg = 'Your message has been sent!';
+                            $alertMsgs = getAlertMsgs($errMsgs, $successMsg);
+                            $failed = count($alertMsgs) > 0 && $alertMsgs[0]['type'] == 'error';
+
+                            if (count($_POST) > 0 && !$failed) {
+                                $data = [
+                                    'name' => filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING),
+                                    'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL),
+                                    'telephone' => filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING),
+                                    'msg' => filter_input(INPUT_POST, 'msg', FILTER_SANITIZE_STRING)
+                                ];
+
+                                if ($_POST['company-name'] !== "")
+                                    $data['companyName'] = filter_input(INPUT_POST, 'company-name', FILTER_SANITIZE_STRING);
+
+                                $query = 'INSERT INTO Contacts (Name, ';
+                                if ($_POST['company-name'] !== "")
+                                    $query .= 'CompanyName, ';
+                                $query .= 'Email, Telephone, Message) VALUES (:name, ';
+                                if ($_POST['company-name'] !== "")
+                                    $query .= ':companyName, ';
+                                $query .= ':email, :telephone, :msg);';
+                                // echo $query;
+                                $stmt = $db->prepare($query);
+                                try {
+                                    $stmt->execute($data);
+                                } catch (PDOException $e) {
+                                    $alertMsgs = [
+                                        [
+                                            'type' => 'error',
+                                            'msg' => $e->getMessage()
+                                        ]
+                                    ];
+                                }
+                            }
+
+                            include "inc/msg-area.php";
                             ?>
                             <div class="contact-input-wrapper">
                                 <label for="contact-name" class="required">Your Name</label>
-                                <input type="text" name="name" id="contact-name">
+                                <input type="text"
+                                    value="<?php echo (isset($_POST["name"]) && $failed) ? $_POST["name"] : ""; ?>"
+                                    name="name" id="contact-name">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-company-name">Company Name</label>
-                                <input type="text" name="company-name" id="contact-company-name">
+                                <input type="text"
+                                    value="<?php echo (isset($_POST["company-name"]) && $failed) ? $_POST["company-name"] : ""; ?>"
+                                    name="company-name" id="contact-company-name">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-email" class="required">Your Email</label>
-                                <input type="text" name="email" id="contact-email">
+                                <input type="text"
+                                    value="<?php echo (isset($_POST["email"]) && $failed) ? $_POST["email"] : ""; ?>"
+                                    name="email" value="" id="contact-email">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-telephone" class="required">Your Telephone Number</label>
-                                <input type="text" name="telephone" id="contact-telephone">
+                                <input type="text"
+                                    value="<?php echo (isset($_POST["telephone"]) && $failed) ? $_POST["telephone"] : ""; ?>"
+                                    name="telephone" id="contact-telephone">
                             </div>
                             <div class="contact-input-wrapper contact-msg-wrapper">
                                 <label for="contact-msg" class="required">Message</label>
-                                <textarea name="msg" id="contact-msg" cols="50"
-                                    rows="10">Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?</textarea>
+                                <textarea name="msg" id="contact-msg" cols="50" rows="10"><?php
+                                echo (isset($_POST["msg"]) && $failed) ?
+                                    $_POST["msg"]
+                                    : "Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?";
+                                ?></textarea>
                             </div>
                             <?php
                             $checkboxID = "pretty-checkbox-contact";
@@ -228,6 +294,7 @@ include "inc/head.php";
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/alerts.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/contactForm.js"></script>
     <script src="js/dropdown.js"></script>

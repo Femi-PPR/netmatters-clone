@@ -3,15 +3,15 @@
 <?php ini_set("display_errors", 1) ?>
 
 <?php
-include "inc/head.php";
+require "inc/head.php";
 ?>
 
 <body>
-    <?php include "inc/cookie.php"; ?>
-    <?php include "inc/sidebar.php"; ?>
+    <?php require "inc/cookie.php"; ?>
+    <?php require "inc/sidebar.php"; ?>
     <div class="content">
         <div class="content-inner">
-            <?php include "inc/header.php"; ?>
+            <?php require "inc/header.php"; ?>
 
             <main>
                 <section class="banners">
@@ -273,7 +273,7 @@ include "inc/head.php";
                         </div>
                         <div class="wrapper-news">
                             <?php
-                            include "inc/conn.php";
+                            require_once "inc/conn.php";
                             try {
                                 $rs = $db->query("SELECT * FROM News JOIN Authors ON Authors.ID = News.AuthorID");
                             } catch (Exception $e) {
@@ -518,10 +518,10 @@ include "inc/head.php";
                     </div>
                 </section>
 
-                <?php include "inc/newsletter.php"; ?>
+                <?php require "inc/newsletter.php"; ?>
             </main>
 
-            <?php include "inc/footer.php"; ?>
+            <?php require "inc/footer.php"; ?>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

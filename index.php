@@ -527,6 +527,7 @@ require "inc/head.php";
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/alerts.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/sliders.js"></script>
     <script src="js/stickyHeader.js"></script>

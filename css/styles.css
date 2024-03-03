@@ -767,7 +767,7 @@ article {
     .cookie-modal {
       width: 600px; } }
 
-.no-show .cookie-wrapper {
+.no-show .cookie-wrapper, html:not(.js) .cookie-wrapper {
   display: none; }
 
 .modal-content {
@@ -1328,7 +1328,7 @@ h1, h2, h3 {
     font-size: .9rem;
     line-height: 35px; }
 
-.no-show .btn-chat {
+.no-show .btn-chat, html:not(.js) .btn-chat {
   display: flex; }
 
 .btns {
@@ -2221,8 +2221,13 @@ label.required::after {
 
 .action-block {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  gap: 10px 0; }
+  @media screen and (min-width: 376px) {
+    .action-block {
+      flex-direction: row; } }
   .action-block span {
     color: #d24d57; }
   .action-block small {
@@ -2246,7 +2251,10 @@ label.required::after {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 2px;
-  line-height: 1.42857143; }
+  line-height: 1.42857143;
+  display: flex;
+  justify-content: space-between;
+  align-items: start; }
 
 .alert-success {
   color: #fff;
@@ -2606,6 +2614,11 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.05); }
 .sidebar .submenu-link:hover span {
   text-decoration: none; }
+
+.dropdown:hover {
+  text-decoration: none; }
+  .dropdown:hover span {
+    text-decoration: underline; }
 
 input:focus, textarea:focus {
   border-color: #5bc0de;

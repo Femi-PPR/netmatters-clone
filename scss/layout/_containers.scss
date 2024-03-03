@@ -376,9 +376,11 @@
     }
 }
 
-.no-show .cookie-wrapper{
-    display: none;
-}
+.no-show, html:not(.js){
+    .cookie-wrapper{
+        display: none;
+    }
+} 
 
 .modal-content{
     padding: 20px;

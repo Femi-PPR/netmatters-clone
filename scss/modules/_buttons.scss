@@ -149,10 +149,11 @@
 
     }
 }
-
-.no-show .btn-chat{
-    display: flex;
-}
+.no-show, html:not(.js){
+    .btn-chat{
+        display: flex;
+    }
+} 
 
 .btns{
     display: inline-flex;

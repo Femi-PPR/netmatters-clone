@@ -3,11 +3,14 @@ if (!isset($checkboxID)) {
     $checkboxID = "pretty-checkbox";
 }
 
+if (!isset($checked))
+    $checked = false;
+
 ?>
 
 <label class="checkbox-label" for="<?= $checkboxID ?>">
     <span class="checkbox-border">
-        <input type="checkbox" name="<?= $checkboxID ?>" class="checkbox-privacy" id="<?= $checkboxID ?>">
+        <input type="checkbox" name="<?= $checkboxID ?>" class="checkbox-privacy" id="<?= $checkboxID ?>" <?= $checked ? "checked" : "" ?>>
         <i class="mdi-checked"></i>
     </span>
     <strong class="checkbox-text">

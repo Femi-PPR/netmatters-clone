@@ -224,3 +224,11 @@ button:hover{
         }
     }
 }
+
+.dropdown:hover{
+    text-decoration: none;
+
+    span{
+        text-decoration: underline;
+    }
+}

@@ -164,7 +164,7 @@ require "inc/head.php";
                             <p><strong>Monday - Friday 07:00 - 18:00 </strong></p>
                         </div>
                         <a href="#" id="dropdown" class="dropdown">
-                            <p>Out of Hours IT Support <i class="fa-chevron-down"></i></p>
+                            <p><span>Out of Hours IT Support</span> <i class="fa-chevron-down"></i></p>
 
                         </a>
                         <div id="dropdown-content" class="out-of-hours">
@@ -194,8 +194,8 @@ require "inc/head.php";
                                     "format" => "The email format is invalid."
                                 ],
                                 "telephone" => [
-                                    "required" => "The phone number field is required.",
-                                    "format" => "The phone number format is invalid."
+                                    "required" => "The telephone field is required.",
+                                    "format" => "The telephone format is invalid."
                                 ],
                                 "msg" => [
                                     "required" => "The message field is required.",

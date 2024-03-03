@@ -2,7 +2,6 @@
 <html lang="en">
 <?php
 $title = "Contact Us | Netmatters";
-ini_set("display_errors", 1);
 require "inc/head.php";
 ?>
 
@@ -17,7 +16,7 @@ require "inc/head.php";
                     <div class="breadcrumb-wrapper">
                         <div class="container">
                             <ul class="breadcrumb">
-                                <li><a href="/netmatters-clone/" class="home-link">Home</a></li>
+                                <li><a href="index.php" class="home-link">Home</a></li>
                                 <li class="slash">/</li>
                                 <li>Our Offices</li>
                             </ul>

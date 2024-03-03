@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php ini_set("display_errors", 1) ?>
 
 <?php
 require "inc/head.php";

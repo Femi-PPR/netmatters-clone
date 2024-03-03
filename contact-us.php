@@ -202,10 +202,10 @@ require "inc/head.php";
                                 ],
                             ];
                             $successMsg = 'Your message has been sent!';
+                            $allSet = allPostNamesSet(array_keys($errMsgs));
                             $alertMsgs = getAlertMsgs($errMsgs, $successMsg);
                             $failed = count($alertMsgs) > 0 && $alertMsgs[0]['type'] == 'error';
-
-                            if (count($_POST) > 0 && !$failed) {
+                            if ($allSet && !$failed) {
                                 $data = [
                                     'name' => filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING),
                                     'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL),
@@ -223,7 +223,6 @@ require "inc/head.php";
                                 if ($_POST['company-name'] !== "")
                                     $query .= ':companyName, ';
                                 $query .= ':email, :telephone, :msg);';
-                                // echo $query;
                                 $stmt = $db->prepare($query);
                                 try {
                                     $stmt->execute($data);
@@ -242,32 +241,32 @@ require "inc/head.php";
                             <div class="contact-input-wrapper">
                                 <label for="contact-name" class="required">Your Name</label>
                                 <input type="text"
-                                    value="<?php echo (isset($_POST["name"]) && $failed) ? $_POST["name"] : ""; ?>"
+                                    value="<?php echo (isset($_POST["name"]) && $failed) ? htmlspecialchars($_POST["name"]) : ""; ?>"
                                     name="name" id="contact-name">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-company-name">Company Name</label>
                                 <input type="text"
-                                    value="<?php echo (isset($_POST["company-name"]) && $failed) ? $_POST["company-name"] : ""; ?>"
+                                    value="<?php echo (isset($_POST["company-name"]) && $failed) ? htmlspecialchars($_POST["company-name"]) : ""; ?>"
                                     name="company-name" id="contact-company-name">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-email" class="required">Your Email</label>
                                 <input type="text"
-                                    value="<?php echo (isset($_POST["email"]) && $failed) ? $_POST["email"] : ""; ?>"
+                                    value="<?php echo (isset($_POST["email"]) && $failed) ? htmlspecialchars($_POST["email"]) : ""; ?>"
                                     name="email" value="" id="contact-email">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-telephone" class="required">Your Telephone Number</label>
                                 <input type="text"
-                                    value="<?php echo (isset($_POST["telephone"]) && $failed) ? $_POST["telephone"] : ""; ?>"
+                                    value="<?php echo (isset($_POST["telephone"]) && $failed) ? htmlspecialchars($_POST["telephone"]) : ""; ?>"
                                     name="telephone" id="contact-telephone">
                             </div>
                             <div class="contact-input-wrapper contact-msg-wrapper">
                                 <label for="contact-msg" class="required">Message</label>
                                 <textarea name="msg" id="contact-msg" cols="50" rows="10"><?php
                                 echo (isset($_POST["msg"]) && $failed) ?
-                                    $_POST["msg"]
+                                    htmlspecialchars($_POST["msg"])
                                     : "Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?";
                                 ?></textarea>
                             </div>

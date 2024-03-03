@@ -17,9 +17,10 @@
 
             $successMsg = 'You have successfully joined our mailing list';
             $alertMsgs = getAlertMsgs($errMsgs, $successMsg);
+            $allSet = allPostNamesSet(array_keys($errMsgs));
             $failed = count($alertMsgs) > 0 && $alertMsgs[0]['type'] === 'error';
 
-            if (!isset($_POST[$checkboxID])) {
+            if (!isset($_POST[$checkboxID]) && $allSet) {
                 $alertMsg = [
                     'type' => 'error',
                     'msg' => 'The marketing preference field is required.'

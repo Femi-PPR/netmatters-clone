@@ -14,12 +14,22 @@ function validFormat(string $name, string $value): bool
     }
 }
 
+function allPostNamesSet(array $postNames): bool
+{
+    foreach ($postNames as $postName) {
+        if (!isset($_POST[$postName])) {
+            return false;
+        }
+    }
+    return true;
+}
+
 
 
 function getAlertMsgs(array $errMsgs, string $successMsg): array
 {
     $alertMsgs = [];
-    if (count($_POST) === 0)
+    if (!allPostNamesSet(array_keys($errMsgs)))
         return $alertMsgs;
     $allValid = true;
     foreach ($errMsgs as $name => $errorMsg) {

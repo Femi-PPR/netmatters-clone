@@ -1,6 +1,6 @@
 <?php
 if (!isset($checkboxID)) {
-    $checkboxID = "pretty-checkbox";
+    $checkboxID = "privacy";
 }
 
 if (!isset($checked))

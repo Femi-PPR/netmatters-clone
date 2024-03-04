@@ -153,7 +153,7 @@ require "inc/head.php";
                     </div>
                 </section>
 
-                <section class="container contact-container">
+                <div class="container contact-container">
                     <div class="contact-wrapper">
                         <div class="contact-info">
                             <p><strong>Email us on:</strong></p>
@@ -201,6 +201,7 @@ require "inc/head.php";
                                 ],
                             ];
                             $successMsg = 'Your message has been sent!';
+                            $checkboxID = "privacy-contact";
                             $allSet = allPostNamesSet(array_keys($errMsgs));
                             $alertMsgs = getAlertMsgs($errMsgs, $successMsg);
                             $failed = count($alertMsgs) > 0 && $alertMsgs[0]['type'] == 'error';
@@ -209,7 +210,8 @@ require "inc/head.php";
                                     'name' => filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING),
                                     'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL),
                                     'telephone' => filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING),
-                                    'msg' => filter_input(INPUT_POST, 'msg', FILTER_SANITIZE_STRING)
+                                    'msg' => filter_input(INPUT_POST, 'msg', FILTER_SANITIZE_STRING),
+                                    'marketing' => (int) isset($_POST[$checkboxID])
                                 ];
 
                                 if ($_POST['company-name'] !== "")
@@ -218,10 +220,10 @@ require "inc/head.php";
                                 $query = 'INSERT INTO Contacts (Name, ';
                                 if ($_POST['company-name'] !== "")
                                     $query .= 'CompanyName, ';
-                                $query .= 'Email, Telephone, Message) VALUES (:name, ';
+                                $query .= 'Email, Telephone, Message, Marketing) VALUES (:name, ';
                                 if ($_POST['company-name'] !== "")
                                     $query .= ':companyName, ';
-                                $query .= ':email, :telephone, :msg);';
+                                $query .= ':email, :telephone, :msg, :marketing);';
                                 $stmt = $db->prepare($query);
                                 try {
                                     $stmt->execute($data);
@@ -253,7 +255,7 @@ require "inc/head.php";
                                 <label for="contact-email" class="required">Your Email</label>
                                 <input type="text"
                                     value="<?php echo (isset($_POST["email"]) && $failed) ? htmlspecialchars($_POST["email"]) : ""; ?>"
-                                    name="email" value="" id="contact-email">
+                                    name="email" id="contact-email">
                             </div>
                             <div class="contact-input-wrapper">
                                 <label for="contact-telephone" class="required">Your Telephone Number</label>
@@ -270,7 +272,7 @@ require "inc/head.php";
                                 ?></textarea>
                             </div>
                             <?php
-                            $checkboxID = "pretty-checkbox-contact";
+
                             require 'inc/privacy.php';
                             ?>
                             <div class="recaptcha">This site is protected by reCAPTCHA and the Google <a href="#"
@@ -282,7 +284,7 @@ require "inc/head.php";
                             </div>
                         </form>
                     </div>
-                </section>
+                </div>
 
                 <?php require "inc/newsletter.php"; ?>
             </main>
